@@ -1,7 +1,15 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
+// load react libraries
+import React from 'react';
+import ReactDOM from 'react-dom';
+const {Route, Router, IndexRoute, hashHistory} = require('react-router');
+
+// load foundation
+$(document).foundation();
+
+// load custom scss
+require('style!css!sass!applicationStyles')
 
 ReactDOM.render(
-    <h1>react-boilerplate</h1>,
+	<p>Boiler Plate</p>,
     document.getElementById('app')
 );
