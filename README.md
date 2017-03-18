@@ -1,3 +1,3 @@
-** React Boilerplate
-** Designed by Mika Rehman
-** mikarehman.com
+# React Boilerplate
+## Designed by Mika Rehman
+## mikarehman.com
