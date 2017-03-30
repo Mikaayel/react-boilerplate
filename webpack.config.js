@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 module.exports = {
     entry: [
         'script!jquery/dist/jquery.min.js',
@@ -48,5 +50,5 @@ module.exports = {
             path.resolve(__dirname, './node_modules/foundation-sites/scss')
         ]
     },
-    devtool: 'cheap-module-eval-source-map'
+    devtool: process.env.NODE.ENV === 'production' ? undefined : 'cheap-module-eval-source-map'
 };
