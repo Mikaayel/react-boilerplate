@@ -1,59 +1,74 @@
-const webpack = require('webpack');
-const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const Webpack = require('webpack');
+const Path = require('path');
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+let isProd = process.env.NODE_ENV === "production";
+let cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+let cssProd = ExtractTextPlugin.extract({
+    fallback: 'style-loader',
+    use: ['css-loader', 'sass-loader'],
+    publicPath: '/dist'
+});
+let cssConfig = isProd ? cssProd : cssDev;
 
 module.exports = {
-    entry: [
-        'script!jquery/dist/jquery.min.js',
-        'script!foundation-sites/dist/js/foundation.min.js',
-        './app/app.jsx'
-    ],
-    externals: {
-        jquery: 'jQuery'
-    },
-    plugins: [
-        new webpack.ProvidePlugin({
-            '$': 'jquery',
-            'jQuery': 'jquery'
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compressor: {
-                warnings: false
-            }
-        })
-    ],
+    entry: './src/app.js',
     output: {
-        path: __dirname,
-        filename: './public/bundle.js'
-    },
-    resolve: {
-        root: __dirname,
-        modulesDirectories: [
-            'node_modules',
-            './app/components'
-        ],
-        alias: {
-            applicationStyles: 'app/css/app.scss'
-        },
-        extensions: ['', '.js', '.jsx']
+        path: Path.resolve(__dirname, 'dist'),
+        filename: 'app.bundle.js'
     },
     module: {
-        loaders: [
-            {
-                loader: 'babel-loader',
-                query: {
-                    presets: ['react', 'es2015', 'stage-0']
+            rules: [
+                {
+                    test: /\.scss$/,
+                    use: cssConfig
                 },
-                test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components|\.git)/
-            }
-        ]
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: 'babel-loader'
+                },
+                {
+                    test: /\.jsx?$/,
+                    exclude: /(node_modules|bower_components|\.git)/
+                }
+            ]
     },
-    sassLoader: {
-        includePaths: [
-            path.resolve(__dirname, './node_modules/foundation-sites/scss')
-        ]
+    resolve: {
+        modules: [
+            Path.resolve(__dirname, "src/components"),
+            'node_modules',
+        ],
+        extensions: ['.js', '.jsx']
     },
-    devtool: process.env.NODE_ENV === 'production' ? undefined : 'cheap-module-eval-source-map'
+    devServer: {
+        contentBase: Path.join(__dirname, 'dist'),
+        compress: true,
+        hot: true,
+        port: 3000,
+        stats: "minimal",
+        open: true
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Page Does Not Exist',
+            minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+            template:  './src/index.ejs',
+        }),
+        new ExtractTextPlugin({
+            filename: "app.bundle.css",
+            disable: !isProd,
+            allChunks: true
+        }),
+        new Webpack.HotModuleReplacementPlugin(
+
+        ),
+        new Webpack.NamedModulesPlugin(
+
+        )
+    ]
 };
