@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run build && node server.js",
     "test": "NODE_ENV=test karma start",
-    "build": "webpack",
+    "build": "webpack"
   },
   "dependencies": {
     "express": "4.14.1",
