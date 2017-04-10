@@ -1,5 +1,5 @@
 # React Boilerplate
-Designed by Mika Rehman
+Designed by Mika Rehman  
 mikarehman.com
 
 ## Webpack V2

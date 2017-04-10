@@ -1,9 +1,7 @@
 #auto-generated stuff
-node_modules
+node_modules/
 yarn.lock
-public/bundle.js
-coverage
-build
+dist/
 stats.json
 
 # trash

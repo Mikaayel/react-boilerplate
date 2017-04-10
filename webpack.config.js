@@ -12,6 +12,9 @@ let cssProd = ExtractTextPlugin.extract({
 });
 let cssConfig = isProd ? cssProd : cssDev;
 
+// disable deprecation messages?
+process.noDeprecation = true;
+
 module.exports = {
     entry: './src/app.js',
     output: {
@@ -30,6 +33,10 @@ module.exports = {
                     use: 'babel-loader'
                 },
                 {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['react', 'es2015', 'stage-0']
+                    },
                     test: /\.jsx?$/,
                     exclude: /(node_modules|bower_components|\.git)/
                 }
@@ -52,7 +59,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Page Does Not Exist',
+            title: 'Boiler Plate V2.0',
             minify: {
                 collapseWhitespace: true
             },
