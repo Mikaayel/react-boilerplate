@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom';
 
 import css from './scss/app.scss';
 
-import Navigation from 'navigation';
+import Main from 'main';
 
 ReactDOM.render(
     <div>
-        <h1>Header One</h1>
-        <Navigation/>
+        <Main/>
     </div>,
     document.getElementById('root')
 );

@@ -3,9 +3,9 @@ import React from 'react';
 let Navigation = React.createClass({
     render: function() {
         return(
-            <div>
-                <p>works</p>
-            </div>
+            <nav>
+                <h1>Navigation</h1>
+            </nav>
         );
     }
 });

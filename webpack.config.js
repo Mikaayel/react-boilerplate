@@ -2,18 +2,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const Webpack = require('webpack');
 const Path = require('path');
+const Glob = require('glob'); // needed for purifycss
+const PurifyCSSPlugin = require('purifycss-webpack');
 
 let isProd = process.env.NODE_ENV === "production";
 let cssDev = ['style-loader', 'css-loader', 'sass-loader'];
 let cssProd = ExtractTextPlugin.extract({
     fallback: 'style-loader',
     use: ['css-loader', 'sass-loader'],
-    publicPath: '/dist'
 });
 let cssConfig = isProd ? cssProd : cssDev;
-
-// disable deprecation messages?
-process.noDeprecation = true;
 
 module.exports = {
     entry: './src/app.js',
@@ -22,25 +20,42 @@ module.exports = {
         filename: 'app.bundle.js'
     },
     module: {
-            rules: [
-                {
-                    test: /\.scss$/,
-                    use: cssConfig
+        rules: [
+            {
+                test: /\.scss$/,
+                use: cssConfig
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: 'babel-loader'
+            },
+            {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['react', 'es2015', 'stage-0']
                 },
-                {
-                    test: /\.js$/,
-                    exclude: /node_modules/,
-                    use: 'babel-loader'
-                },
-                {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['react', 'es2015', 'stage-0']
-                    },
-                    test: /\.jsx?$/,
-                    exclude: /(node_modules|bower_components|\.git)/
-                }
-            ]
+                test: /\.jsx?$/,
+                exclude: /(node_modules|bower_components|\.git)/
+            },
+            {
+                test: /\.(png|svg|jpe?g|gif)$/i,
+                // loader: 'file-loader',
+                include: Path.join(__dirname, 'src'),
+                use: [
+                    'file-loader?name=[hash:12].[ext]&outputPath=images/',
+
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            gifsicle: {
+                                interlaced: false
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
     },
     resolve: {
         modules: [
@@ -55,7 +70,7 @@ module.exports = {
         hot: true,
         port: 3000,
         stats: "minimal",
-        open: true
+        open: false
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -71,11 +86,12 @@ module.exports = {
             disable: !isProd,
             allChunks: true
         }),
-        new Webpack.HotModuleReplacementPlugin(
-
-        ),
-        new Webpack.NamedModulesPlugin(
-
-        )
+        new Webpack.HotModuleReplacementPlugin(),
+        new Webpack.NamedModulesPlugin(),
+        // Make sure this is after ExtractTextPlugin!
+        new PurifyCSSPlugin({
+            // Give paths to parse for rules. These should be absolute!
+            paths: Glob.sync(Path.join(__dirname, 'src/components/*.js'))
+        })
     ]
 };
