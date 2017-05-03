@@ -1,13 +1,21 @@
 import React from 'react';
 
-let Footer = React.createClass({
-    render: function() {
+module.exports = class Footer extends React.Component {
+    render() {
         return(
             <footer>
-                <h1>Footer</h1>
+                <div className="row">
+                    <div className="small-12 medium-4 columns">
+                        <p>footer</p>
+                    </div>
+                    <div className="small-12 medium-4 columns">
+                        <p>footer</p>
+                    </div>
+                    <div className="small-12 medium-4 columns">
+                        <p>footer</p>
+                    </div>
+                </div>
             </footer>
         );
     }
-});
-
-module.exports = Footer;
+};

@@ -1,21 +1,29 @@
 import React from 'react';
+import {
+    HashRouter as Router,
+    Route,
+    Match,
+    Link,
+    Switch
+} from 'react-router-dom';
+
+import Home from 'home';
 
 import Navigation from 'navigation';
 import Footer from 'footer';
 
-
-let Main = React.createClass({
-    render: function() {
+module.exports = class Main extends React.Component {
+    render() {
         return (
-            <div>
-                <Navigation/>
-                <main>
-                    <h1>Main</h1>
-                </main>
-                <Footer/>
-            </div>
+            <Router>
+                <div>
+                    <Navigation/>
+                    <main>
+                        <Route path="/" exact={true} component={Home} />
+                    </main>
+                    <Footer/>
+                </div>
+            </Router>
         );
     }
-});
-
-module.exports = Main;
+};

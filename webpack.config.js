@@ -37,13 +37,22 @@ let cssProd = ExtractTextPlugin.extract({
                 }
             }
         },
-        'sass-loader'
+        {
+            loader: 'sass-loader'
+        }
     ],
 });
 let cssConfig = isProd ? cssProd : cssDev;
 
 module.exports = {
-    entry: './src/app.js',
+    entry: [
+        'script-loader!jquery/dist/jquery.min.js',
+        'script-loader!foundation-sites/dist/js/foundation.min.js',
+        './src/app.js'
+    ],
+    externals: {
+        jquery: 'jQuery' // allows foundation to use jquery methods.
+    },
     output: {
         path: Path.resolve(__dirname, 'dist'),
         filename: 'app.bundle.js'
@@ -72,7 +81,6 @@ module.exports = {
                 include: Path.join(__dirname, 'src'),
                 use: [
                     'file-loader?name=[hash:12].[ext]&outputPath=images/',
-
                     {
                         loader: 'image-webpack-loader',
                         options: {
@@ -101,8 +109,12 @@ module.exports = {
         open: false
     },
     plugins: [
+        new Webpack.ProvidePlugin({
+            '$':'jquery',
+            'jQuery':'jquery'
+        }),
         new HtmlWebpackPlugin({
-            title: 'Boiler Plate',
+            title: 'React Boilerplate',
             minify: {
                 collapseWhitespace: true
             },
