@@ -1,10 +1,7 @@
 import React from 'react';
 import {
-    HashRouter as Router,
-    Route,
-    Match,
-    Link,
-    Switch
+    BrowserRouter as Router,
+    Route
 } from 'react-router-dom';
 
 import Home from 'home';
@@ -18,9 +15,9 @@ module.exports = class Main extends React.Component {
             <Router>
                 <div>
                     <Navigation/>
-                    <main>
-                        <Route path="/" exact={true} component={Home} />
-                    </main>
+						<main>
+							<Route exact path="/" component={Home} />
+						</main>
                     <Footer/>
                 </div>
             </Router>

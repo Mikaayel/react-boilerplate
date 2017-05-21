@@ -82,10 +82,26 @@ module.exports = {
                 use: [
                     'file-loader?name=[hash:12].[ext]&outputPath=images/',
                     {
-                        loader: 'image-webpack-loader',
+                        loader: 'img-loader',
                         options: {
+                            enabled: process.env.NODE_ENV === 'production',
                             gifsicle: {
                                 interlaced: false
+                            },
+                            mozjpeg: {
+                                progressive: true,
+                                arithmetic: false
+                            },
+                            optipng: false, // disabled
+                            pngquant: {
+                                floyd: 0.5,
+                                speed: 2
+                            },
+                            svgo: {
+                                plugins: [
+                                    {removeTitle: true},
+                                    {convertPathData: false}
+                                ]
                             }
                         }
                     }
@@ -106,7 +122,8 @@ module.exports = {
         hot: true,
         port: 3000,
         stats: "minimal",
-        open: false
+        open: false,
+        historyApiFallback: true
     },
     plugins: [
         new Webpack.ProvidePlugin({
