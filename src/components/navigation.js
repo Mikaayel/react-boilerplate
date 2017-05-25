@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import ISVG from 'react-inlinesvg';
 
-import logoSVG from '../images/';
+// import logoSVG from '../images/';
 
 module.exports = class Navigation extends React.Component {
     render() {
@@ -13,7 +13,7 @@ module.exports = class Navigation extends React.Component {
                         <div className="top-bar">
                             <div className="top-bar-left">
                                 <ul className="menu">
-                                    <li><NavLink exact to="/"><ISVG className="logo--svg" src={logoSVG}></ISVG></NavLink></li>
+                                    {/*<li><NavLink exact to="/"><ISVG className="logo--svg" src={logoSVG}></ISVG></NavLink></li>*/}
                                 </ul>
                             </div>
                             <div className="top-bar-right">
