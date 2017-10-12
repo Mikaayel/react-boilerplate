@@ -1,11 +1,16 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const argv = require('yargs').argv;
+const DashboardPlugin = require('webpack-dashboard/plugin');
+
 const Webpack = require('webpack');
 const Path = require('path');
-const Glob = require('glob'); // needed for purifycss
-const PurifyCSSPlugin = require('purifycss-webpack');
 
 let isProd = process.env.NODE_ENV === "production";
+
+console.log('your environment is:', process.env.NODE_ENV);
+
 let cssDev = [
     'style-loader',
     'css-loader',
@@ -44,7 +49,7 @@ let cssProd = ExtractTextPlugin.extract({
 });
 let cssConfig = isProd ? cssProd : cssDev;
 
-module.exports = {
+let config = {
     entry: [
         'script-loader!jquery/dist/jquery.min.js',
         'script-loader!foundation-sites/dist/js/foundation.min.js',
@@ -120,7 +125,7 @@ module.exports = {
         contentBase: Path.join(__dirname, 'dist'),
         compress: true,
         hot: true,
-        port: 3000,
+        port: 8080,
         stats: "minimal",
         open: false,
         historyApiFallback: true
@@ -145,8 +150,13 @@ module.exports = {
         }),
         new Webpack.HotModuleReplacementPlugin(),
         new Webpack.NamedModulesPlugin(),
-        new PurifyCSSPlugin({
-            paths: Glob.sync(Path.join(__dirname, 'src/components/*.js'))
-        })
     ]
 };
+
+
+if(!isProd) {
+    // dashboard hangs in prod, check env variable, set to plugin if dev
+    config.plugins.push(new DashboardPlugin());
+}
+
+module.exports = config;
