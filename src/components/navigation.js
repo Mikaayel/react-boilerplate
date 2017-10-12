@@ -1,8 +1,5 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import ISVG from 'react-inlinesvg';
-
-// import logoSVG from '../images/';
 
 module.exports = class Navigation extends React.Component {
     render() {
