@@ -124,7 +124,7 @@ let config = {
     devServer: {
         contentBase: Path.join(__dirname, 'dist'),
         compress: true,
-        hot: true,
+        hot: false,
         port: 8080,
         stats: "minimal",
         open: false,
@@ -148,8 +148,7 @@ let config = {
             disable: !isProd,
             allChunks: true
         }),
-        new Webpack.HotModuleReplacementPlugin(),
-        new Webpack.NamedModulesPlugin(),
+        new Webpack.NamedModulesPlugin()
     ]
 };
 
