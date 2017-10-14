@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Navigation from '../navigation/navigation';
 
@@ -14,10 +14,11 @@ class Routes extends React.Component {
     render() {
         return (
             <Page>
-                <Route path='/' exact component={Home}/>
-                <Route path='/about' component={About}/>
-                <Route path='/404' component={NotFound}/>
-                <Redirect path='*' to='/404'/>
+                <Switch>
+                    <Route path='/' exact component={Home}/>
+                    <Route path='/about' component={About}/>
+                    <Route path='*' component={NotFound}/>
+                </Switch>
             </Page>
         )
     }
