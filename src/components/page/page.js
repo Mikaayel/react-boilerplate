@@ -13,8 +13,7 @@ class Page extends React.Component {
         return (
             <div>
                 <Navigation/>
-                <Route path='/' exact component={Item}/>
-                <Route path='/about' component={NotFound}/>
+                {this.props.children}
                 <Footer/>
             </div>
         )
