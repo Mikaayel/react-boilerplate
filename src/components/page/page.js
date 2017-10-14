@@ -1,11 +1,9 @@
 import React from 'react';
-
 import { Route } from 'react-router-dom';
 
-import Navigation from '../navigation/navigation';
-import Footer from '../footer/footer';
-
 import Item from '../item/item';
+import Footer from '../footer/footer';
+import Navigation from '../navigation/navigation';
 import NotFound from '../notFound/notFound';
 
 class Page extends React.Component {
