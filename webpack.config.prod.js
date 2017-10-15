@@ -1,9 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const argv = require('yargs').argv;
-const DashboardPlugin = require('webpack-dashboard/plugin');
-
 const Webpack = require('webpack');
 const Path = require('path');
 
@@ -13,13 +10,8 @@ console.log('your environment is:', process.env.NODE_ENV);
 
 let config = {
 	entry: [
-		'script-loader!jquery/dist/jquery.min.js',
-		'script-loader!foundation-sites/dist/js/foundation.min.js',
 		'./src/app.js'
 	],
-	externals: {
-		jquery: 'jQuery' // allows foundation to use jquery methods.
-	},
 	output: {
 		path: Path.resolve(__dirname, 'dist'),
 		filename: 'app.bundle.js'
@@ -31,27 +23,6 @@ let config = {
 				test: /\.js$/,
 				exclude: ['/node_modules/', '*.test.js'],
 				use: 'eslint-loader'
-			},
-			{
-				test: /\.css$/,
-				include: Path.join(__dirname, 'node_modules/foundation-sites/dist/css/foundation.min.css'),
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: [
-						'css-loader',
-						{
-							loader: 'postcss-loader',
-							options: {
-								plugins: function() {
-									return [
-										require('precss'),
-										require('autoprefixer')
-									];
-								}
-							}
-						}
-					],
-				})
 			},
 			{
 				test: /\.scss$/,
@@ -131,12 +102,6 @@ let config = {
 	},
 	plugins: [
 		new Webpack.NoEmitOnErrorsPlugin(),
-		new Webpack.ProvidePlugin({
-			'$':'jquery',
-			'jQuery':'jquery',
-			'window.jQuery': 'jquery',
-			'foundation': 'Foundation'   
-		}),
 		new HtmlWebpackPlugin({
 			title: 'React Boilerplate',
 			minify: {
