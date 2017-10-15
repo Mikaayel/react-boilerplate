@@ -65,6 +65,12 @@ let config = {
     module: {
         rules: [
             {
+                enforce: 'pre',
+                test: /\.js$/,
+                exclude: ['/node_modules/', '*.test.js'],
+                use: 'eslint-loader'
+            },
+            {
                 test: /\.scss$/,
                 use: cssConfig
             },
@@ -123,14 +129,16 @@ let config = {
     },
     devServer: {
         contentBase: Path.join(__dirname, 'dist'),
-        compress: true,
-        hot: false,
+        compress: false,
+        hot: true,
         port: 8080,
         stats: "minimal",
         open: false,
         historyApiFallback: true
     },
     plugins: [
+        new Webpack.HotModuleReplacementPlugin(),
+        new Webpack.NoEmitOnErrorsPlugin(),
         new Webpack.ProvidePlugin({
             '$':'jquery',
             'jQuery':'jquery'
