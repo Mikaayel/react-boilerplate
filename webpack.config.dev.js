@@ -7,47 +7,11 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const Webpack = require('webpack');
 const Path = require('path');
 
+console.log('webpack is running in', process.env.NODE_ENV);
+
 let isProd = process.env.NODE_ENV === "production";
 
-console.log('your environment is:', process.env.NODE_ENV);
-
-let cssDev = [
-    'style-loader',
-    'css-loader',
-    {
-        loader: 'postcss-loader',
-        options: {
-            plugins: function() {
-                return [
-                    require('precss'),
-                    require('autoprefixer')
-                ];
-            }
-        }
-    },
-    'sass-loader'
-];
-let cssProd = ExtractTextPlugin.extract({
-    fallback: 'style-loader',
-    use: [
-        'css-loader',
-        {
-            loader: 'postcss-loader',
-            options: {
-                plugins: function() {
-                    return [
-                        require('precss'),
-                        require('autoprefixer')
-                    ];
-                }
-            }
-        },
-        {
-            loader: 'sass-loader'
-        }
-    ],
-});
-let cssConfig = isProd ? cssProd : cssDev;
+// let cssConfig = isProd ? cssProd : cssDev;
 
 let config = {
     entry: [
@@ -72,7 +36,62 @@ let config = {
             },
             {
                 test: /\.scss$/,
-                use: cssConfig
+                include: Path.resolve(__dirname, 'src/scss/'),
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        query: {
+                            modules: false,
+                            minimize: false,
+                            import: true
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: function () {
+                                return [
+                                    require('precss'),
+                                    require('autoprefixer')
+                                ];
+                            }
+                        }
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.scss$/,
+                include: Path.resolve(__dirname, 'src/components/'),
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        query: {
+                            modules: true,
+                            localIdentName: '[name]__[local]___[hash:base64:5]',
+                            minimize: false,
+                            import: true
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: function () {
+                                return [
+                                    require('precss'),
+                                    require('autoprefixer')
+                                ];
+                            }
+                        }
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
             },
             {
                 test: /\.js$/,
@@ -110,8 +129,8 @@ let config = {
                             },
                             svgo: {
                                 plugins: [
-                                    {removeTitle: true},
-                                    {convertPathData: false}
+                                    { removeTitle: true },
+                                    { convertPathData: false }
                                 ]
                             }
                         }
@@ -140,8 +159,8 @@ let config = {
         new Webpack.HotModuleReplacementPlugin(),
         new Webpack.NoEmitOnErrorsPlugin(),
         new Webpack.ProvidePlugin({
-            '$':'jquery',
-            'jQuery':'jquery'
+            '$': 'jquery',
+            'jQuery': 'jquery'
         }),
         new HtmlWebpackPlugin({
             title: 'React Boilerplate',
@@ -149,21 +168,16 @@ let config = {
                 collapseWhitespace: true
             },
             hash: true,
-            template:  './src/index.ejs',
+            template: './src/index.ejs',
         }),
         new ExtractTextPlugin({
             filename: "app.bundle.css",
-            disable: !isProd,
+            disable: true,
             allChunks: true
         }),
-        new Webpack.NamedModulesPlugin()
+        new Webpack.NamedModulesPlugin(),
+        new DashboardPlugin()
     ]
 };
-
-
-if(!isProd) {
-    // dashboard hangs in prod, check env variable, set to plugin if dev
-    config.plugins.push(new DashboardPlugin());
-}
 
 module.exports = config;
