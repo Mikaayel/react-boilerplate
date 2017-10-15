@@ -11,17 +11,10 @@ console.log('webpack is running in', process.env.NODE_ENV);
 
 let isProd = process.env.NODE_ENV === "production";
 
-// let cssConfig = isProd ? cssProd : cssDev;
-
 let config = {
     entry: [
-        'script-loader!jquery/dist/jquery.min.js',
-        'script-loader!foundation-sites/dist/js/foundation.min.js',
         './src/app.js'
     ],
-    externals: {
-        jquery: 'jQuery' // allows foundation to use jquery methods.
-    },
     output: {
         path: Path.resolve(__dirname, 'dist'),
         filename: 'app.bundle.js'
@@ -158,10 +151,6 @@ let config = {
     plugins: [
         new Webpack.HotModuleReplacementPlugin(),
         new Webpack.NoEmitOnErrorsPlugin(),
-        new Webpack.ProvidePlugin({
-            '$': 'jquery',
-            'jQuery': 'jquery'
-        }),
         new HtmlWebpackPlugin({
             title: 'React Boilerplate',
             minify: {

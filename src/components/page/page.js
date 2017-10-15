@@ -10,9 +10,9 @@ class Page extends React.Component {
 	render() {
 		return (
 			<div>
-				<Navigation/>
+				<Navigation />
 				{this.props.children}
-				<Footer/>
+				<Footer />
 			</div>
 		);
 	}
