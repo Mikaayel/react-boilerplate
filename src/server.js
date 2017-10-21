@@ -10,10 +10,10 @@ const PORT = process.env.PORT || 8080;
 // 	} else {
 // 		res.redirect('https://' + req.hostname + req.url);
 // 	}
-// })
+// });
 
 app.use(Express.static('dist'));
 
-app.listen(Port, function() {
+app.listen(PORT, function() {
 	console.log(`Express server is running on port ${PORT}`);
 })
