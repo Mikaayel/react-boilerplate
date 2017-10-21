@@ -1,6 +1,5 @@
 #auto-generated stuff
 node_modules/
-dist/
 stats.json
 yarn.lock
 yarn-error.log
