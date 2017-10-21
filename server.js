@@ -1,4 +1,5 @@
 const Express = require('express');
+const Router = require('react-router');
 
 let app = Express();
 const PORT = process.env.PORT || 8080;
@@ -12,7 +13,11 @@ const PORT = process.env.PORT || 8080;
 // 	}
 // });
 
-app.use(Express.static('dist'));
+app.get('/*', (req, res) => {
+	res.render('index');
+});
+
+// app.use(Express.static('dist'));
 
 app.listen(PORT, function() {
 	console.log(`Express server is running on port ${PORT}`);
