@@ -9,8 +9,6 @@ const Path = require('path');
 
 console.log('webpack is running in', process.env.NODE_ENV);
 
-let isProd = process.env.NODE_ENV === "production";
-
 let config = {
     entry: [
         './src/app.js'
@@ -58,7 +56,7 @@ let config = {
             },
             {
                 test: /\.scss$/,
-                include: Path.resolve(__dirname, 'src/components/'),
+                include: Path.resolve(__dirname, 'src/shared/'),
                 use: [
                     'style-loader',
                     {
@@ -134,7 +132,7 @@ let config = {
     },
     resolve: {
         modules: [
-            Path.resolve(__dirname, "src/components"),
+            Path.resolve(__dirname, "src/shared"),
             'node_modules',
         ],
         extensions: ['.js', '.jsx']

@@ -2,9 +2,4 @@
 Designed by Mika Rehman  
 mikarehman.com
 
-## Webpack V2
-
-
-### Scripts
-1. `yarn test`
-2. `yarn prod`
+See a working demo https://mika-react-boilerplate.herokuapp.com/
