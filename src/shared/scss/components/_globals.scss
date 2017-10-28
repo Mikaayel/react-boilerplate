@@ -1,0 +1,17 @@
+// color variables
+$font-color--primary: #333;
+
+// font variables
+$font-stack--primary: 'Roboto', sans-serif !default;
+
+// resets
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+// globals
+body {
+    font-family: $font-stack--primary;
+    color: $font-color--primary;
+}

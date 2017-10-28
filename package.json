@@ -10,8 +10,8 @@
 		"test": "export NODE_ENV=development && karma start",
 		"lint": "eslint --fix ./src/**/*.js",
 		"dev:start": "export NODE_ENV=development && webpack-dashboard -- webpack-dev-server --config webpack.config.dev.js",
-		"prod:build": "export NODE_ENV=production && npm run clean && webpack -p --config webpack.config.prod.js",
-		"start": "node server.js"
+		"build": "export NODE_ENV=production && npm run clean && webpack -p --config webpack.config.prod.js",
+		"start": "node src/server"
 	},
 	"dependencies": {
 		"express": "^4.16.2",
