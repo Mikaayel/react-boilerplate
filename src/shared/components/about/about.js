@@ -1,14 +1,15 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
+// import CSSModules from 'react-css-modules';
 
-import style from './about.scss';
+// import style from './about.scss';
 
 const About = () => {
 	return (
 		<div>
-			<p>About</p>
+			<h1>About</h1>
 		</div>
 	);
 };
 
-export default CSSModules(About, style);
+export default About;
+// export default CSSModules(About, style);

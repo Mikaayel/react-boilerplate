@@ -1,7 +1,7 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
+// import CSSModules from 'react-css-modules';
 
-import style from './notFound.scss';
+// import style from './notFound.scss';
 
 const NotFound = () => {
 	return (
@@ -12,4 +12,5 @@ const NotFound = () => {
 	);
 };
 
-export default CSSModules(NotFound, style);
+export default NotFound;
+// export default CSSModules(NotFound, style);

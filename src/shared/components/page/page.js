@@ -1,7 +1,7 @@
 import React from 'react';
-import CSSModule from 'react-css-modules';
+// import CSSModule from 'react-css-modules';
 
-import style from './page.scss';
+// import style from './page.scss';
 
 import Footer from '../footer/footer';
 import Navigation from '../navigation/navigation';
@@ -12,10 +12,11 @@ class Page extends React.Component {
 			<div>
 				<Navigation />
 				{this.props.children}
-				<Footer />
+				{/* <Footer /> */}
 			</div>
 		);
 	}
 }
 
-export default CSSModule(Page, style);
+export default Page;
+// export default CSSModule(Page, style);

@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import CSSModules from 'react-css-modules';
+// import CSSModules from 'react-css-modules';
 
-import style from './navigation.scss';
+// import style from './navigation.scss';
 
 class Navigation extends React.Component {
 	render() {
@@ -24,4 +24,5 @@ class Navigation extends React.Component {
 	}
 };
 
-export default CSSModules(Navigation, style);
+export default Navigation;
+// export default CSSModules(Navigation, style);
