@@ -1,6 +1,9 @@
-const path = require('path');
-const srcPath = path.resolve(__dirname, 'src');
-const distPath = path.resolve(__dirname, 'dist');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Path = require('path');
+const Webpack = require('webpack');
+
+const srcPath = Path.resolve(__dirname, 'src');
+const distPath = Path.resolve(__dirname, 'dist');
 
 module.exports = {
     context: srcPath,
@@ -10,20 +13,51 @@ module.exports = {
         filename: 'client.js',
         publicPath: '/'
     },
+    stats: {
+        children: false,
+        chunks: false,
+        chunkModules: false,
+        maxModules: 0
+    },
     target: 'web',
     resolve: {
         modules: ['node_modules', 'src'],
         extensions: ['*', '.js', '.json']
     },
+    devServer: {
+        contentBase: distPath,
+        compress: false,
+        hot: true,
+        port: 8080,
+        stats: {
+            children: false,
+            chunks: false,
+            chunkModules: false,
+            warnings: false
+        },
+        open: false,
+        historyApiFallback: true
+    },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
+                exclude: /node_modules/
             }
         ]
     },
-    devtool: 'source-map'
+    devtool: 'source-map',
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'React Boilerplate',
+            minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+            template: 'shared/index.ejs',
+        })
+    ]
 };
 
 // const HtmlWebpackPlugin = require('html-webpack-plugin');

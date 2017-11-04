@@ -145,7 +145,7 @@ var _notFound = __webpack_require__(2);
 
 var _notFound2 = _interopRequireDefault(_notFound);
 
-var _render = __webpack_require__(16);
+var _render = __webpack_require__(15);
 
 var _render2 = _interopRequireDefault(_render);
 
@@ -273,17 +273,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Main = __webpack_require__(8);
-
-var _Main2 = _interopRequireDefault(_Main);
-
-var _Home = __webpack_require__(9);
+var _Home = __webpack_require__(8);
 
 var _Home2 = _interopRequireDefault(_Home);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _about = __webpack_require__(10);
+var _about = __webpack_require__(9);
 
 var _about2 = _interopRequireDefault(_about);
 
@@ -291,7 +287,7 @@ var _notFound = __webpack_require__(2);
 
 var _notFound2 = _interopRequireDefault(_notFound);
 
-var _page = __webpack_require__(11);
+var _page = __webpack_require__(10);
 
 var _page2 = _interopRequireDefault(_page);
 
@@ -340,40 +336,10 @@ exports.default = function () {
     // </div>
     ;
 };
+// import Main from './Main';
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var style = {
-    padding: '16px',
-    flex: '1'
-};
-
-exports.default = function (_ref) {
-    var children = _ref.children;
-    return _react2.default.createElement(
-        'main',
-        { style: style },
-        children
-    );
-};
-
-/***/ }),
-/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -398,7 +364,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -434,7 +400,7 @@ exports.default = About;
 // export default CSSModules(About, style);
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -450,11 +416,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _footer = __webpack_require__(12);
+var _footer = __webpack_require__(11);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _navigation = __webpack_require__(15);
+var _navigation = __webpack_require__(14);
 
 var _navigation2 = _interopRequireDefault(_navigation);
 
@@ -497,7 +463,7 @@ exports.default = Page;
 // export default CSSModule(Page, style);
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -511,11 +477,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactCssModules = __webpack_require__(13);
+var _reactCssModules = __webpack_require__(12);
 
 var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 
-var _footer = __webpack_require__(14);
+var _footer = __webpack_require__(13);
 
 var _footer2 = _interopRequireDefault(_footer);
 
@@ -536,19 +502,19 @@ var Footer = function Footer() {
 exports.default = (0, _reactCssModules2.default)(Footer, _footer2.default);
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-css-modules");
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -645,7 +611,7 @@ exports.default = Navigation;
 // export default CSSModules(Navigation, style);
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -655,7 +621,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _server = __webpack_require__(17);
+var _server = __webpack_require__(16);
 
 var _react = __webpack_require__(0);
 
@@ -664,11 +630,11 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function (renderMe) {
-    return '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="UTF-8">\n        <title>Tether</title>\n        <style>\n            body {\n                font-family: Helvetica Neue, Arial, sans-serif;\n                margin: 0;\n            }\n            html { box-sizing: border-box; }\n            *, *:before, *:after { box-sizing: inherit; }\n        </style>\n    </head>\n    <body>\n        <div id="app">' + (0, _server.renderToString)(renderMe) + '</div>\n        <script src="/static/client.js"></script>\n    </body>\n</html>';
+    return '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="UTF-8">\n        <title>Tether</title>\n        <style>\n            body {\n                font-family: Helvetica Neue, Arial, sans-serif;\n                margin: 0;\n            }\n            html { box-sizing: border-box; }\n            *, *:before, *:after { box-sizing: inherit; }\n        </style>\n    </head>\n    <body>\n        <div id="root">' + (0, _server.renderToString)(renderMe) + '</div>\n        <script src="/static/client.js"></script>\n    </body>\n</html>';
 };
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
