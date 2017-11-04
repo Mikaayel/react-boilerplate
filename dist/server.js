@@ -60,98 +60,40 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./server/index.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports) {
+/******/ ({
 
-module.exports = require("react");
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-dom");
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-css-modules");
-
-/***/ }),
-/* 3 */
+/***/ "./server/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// import CSSModules from 'react-css-modules';
-
-// import style from './notFound.scss';
-
-var NotFound = function NotFound() {
-	return _react2.default.createElement(
-		'div',
-		null,
-		_react2.default.createElement(
-			'h1',
-			null,
-			'404'
-		),
-		_react2.default.createElement(
-			'h2',
-			null,
-			'Page not found'
-		)
-	);
-};
-
-exports.default = NotFound;
-// export default CSSModules(NotFound, style);
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _express = __webpack_require__(5);
+var _express = __webpack_require__("express");
 
 var _express2 = _interopRequireDefault(_express);
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(6);
+var _reactRouter = __webpack_require__("react-router");
 
-var _sourceMapSupport = __webpack_require__(7);
+var _sourceMapSupport = __webpack_require__("source-map-support");
 
 var _sourceMapSupport2 = _interopRequireDefault(_sourceMapSupport);
 
-var _App = __webpack_require__(8);
+var _App = __webpack_require__("./shared/App.js");
 
 var _App2 = _interopRequireDefault(_App);
 
-var _notFound = __webpack_require__(3);
+var _notFound = __webpack_require__("./shared/components/notFound/notFound.js");
 
 var _notFound2 = _interopRequireDefault(_notFound);
 
-var _render = __webpack_require__(17);
+var _render = __webpack_require__("./server/render.js");
 
 var _render2 = _interopRequireDefault(_render);
 
@@ -191,25 +133,8 @@ app.listen(PORT);
 console.log('server is running on port:', PORT);
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports) {
 
-module.exports = require("express");
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router");
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = require("source-map-support");
-
-/***/ }),
-/* 8 */
+/***/ "./server/render.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -219,29 +144,53 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(0);
+var _server = __webpack_require__("react-dom/server");
+
+var _react = __webpack_require__("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(1);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _app = __webpack_require__(9);
+exports.default = function (renderMe) {
+    return '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="UTF-8">\n        <title>React Boilerplate</title>\n    </head>\n    <body>\n        <div id="root">' + (0, _server.renderToString)(renderMe) + '</div>\n        <script src="/static/client.js"></script>\n    </body>\n</html>';
+};
+
+/***/ }),
+
+/***/ "./shared/App.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__("react-router-dom");
+
+var _app = __webpack_require__("./shared/scss/app.scss");
 
 var _app2 = _interopRequireDefault(_app);
 
-var _home = __webpack_require__(10);
+var _home = __webpack_require__("./shared/components/home/home.js");
 
 var _home2 = _interopRequireDefault(_home);
 
-var _about = __webpack_require__(12);
+var _about = __webpack_require__("./shared/components/about/about.js");
 
 var _about2 = _interopRequireDefault(_about);
 
-var _notFound = __webpack_require__(3);
+var _notFound = __webpack_require__("./shared/components/notFound/notFound.js");
 
 var _notFound2 = _interopRequireDefault(_notFound);
 
-var _page = __webpack_require__(13);
+var _page = __webpack_require__("./shared/components/page/page.js");
 
 var _page2 = _interopRequireDefault(_page);
 
@@ -268,13 +217,8 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 9 */
-/***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 10 */
+/***/ "./shared/components/about/about.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -284,53 +228,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactCssModules = __webpack_require__(2);
-
-var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
-
-var _home = __webpack_require__(11);
-
-var _home2 = _interopRequireDefault(_home);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Home = function Home() {
-	return _react2.default.createElement(
-		'div',
-		null,
-		_react2.default.createElement(
-			'p',
-			null,
-			'home'
-		)
-	);
-};
-
-exports.default = (0, _reactCssModules2.default)(Home, _home2.default);
-// export default Home;
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _react = __webpack_require__(0);
+var _react = __webpack_require__("react");
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -356,7 +254,8 @@ exports.default = About;
 // export default CSSModules(About, style);
 
 /***/ }),
-/* 13 */
+
+/***/ "./shared/components/footer/footer.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -366,78 +265,15 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
+var _react = __webpack_require__("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _footer = __webpack_require__(14);
-
-var _footer2 = _interopRequireDefault(_footer);
-
-var _navigation = __webpack_require__(16);
-
-var _navigation2 = _interopRequireDefault(_navigation);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// import CSSModule from 'react-css-modules';
-
-// import style from './page.scss';
-
-var Page = function (_React$Component) {
-	_inherits(Page, _React$Component);
-
-	function Page() {
-		_classCallCheck(this, Page);
-
-		return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).apply(this, arguments));
-	}
-
-	_createClass(Page, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(_navigation2.default, null),
-				this.props.children
-			);
-		}
-	}]);
-
-	return Page;
-}(_react2.default.Component);
-
-exports.default = Page;
-// export default CSSModule(Page, style);
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactCssModules = __webpack_require__(2);
+var _reactCssModules = __webpack_require__("react-css-modules");
 
 var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 
-var _footer = __webpack_require__(15);
+var _footer = __webpack_require__("./shared/components/footer/footer.scss");
 
 var _footer2 = _interopRequireDefault(_footer);
 
@@ -458,13 +294,64 @@ var Footer = function Footer() {
 exports.default = (0, _reactCssModules2.default)(Footer, _footer2.default);
 
 /***/ }),
-/* 15 */
+
+/***/ "./shared/components/footer/footer.scss":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 16 */
+
+/***/ "./shared/components/home/home.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactCssModules = __webpack_require__("react-css-modules");
+
+var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+var _home = __webpack_require__("./shared/components/home/home.scss");
+
+var _home2 = _interopRequireDefault(_home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Home = function Home() {
+	return _react2.default.createElement(
+		'div',
+		{ styleName: 'home' },
+		_react2.default.createElement(
+			'p',
+			null,
+			'home'
+		)
+	);
+};
+
+exports.default = (0, _reactCssModules2.default)(Home, _home2.default);
+// export default Home;
+
+/***/ }),
+
+/***/ "./shared/components/home/home.scss":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"home":"home_2a9oS"};
+
+/***/ }),
+
+/***/ "./shared/components/navigation/navigation.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -476,11 +363,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(1);
+var _reactRouterDom = __webpack_require__("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -561,34 +448,168 @@ exports.default = Navigation;
 // export default CSSModules(Navigation, style);
 
 /***/ }),
-/* 17 */
+
+/***/ "./shared/components/notFound/notFound.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+	value: true
 });
 
-var _server = __webpack_require__(18);
-
-var _react = __webpack_require__(0);
+var _react = __webpack_require__("react");
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = function (renderMe) {
-    return '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="UTF-8">\n        <title>React Boilerplate</title>\n    </head>\n    <body>\n        <div id="root">' + (0, _server.renderToString)(renderMe) + '</div>\n        <script src="/static/client.js"></script>\n    </body>\n</html>';
+// import CSSModules from 'react-css-modules';
+
+// import style from './notFound.scss';
+
+var NotFound = function NotFound() {
+	return _react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(
+			'h1',
+			null,
+			'404'
+		),
+		_react2.default.createElement(
+			'h2',
+			null,
+			'Page not found'
+		)
+	);
 };
 
+exports.default = NotFound;
+// export default CSSModules(NotFound, style);
+
 /***/ }),
-/* 18 */
+
+/***/ "./shared/components/page/page.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _footer = __webpack_require__("./shared/components/footer/footer.js");
+
+var _footer2 = _interopRequireDefault(_footer);
+
+var _navigation = __webpack_require__("./shared/components/navigation/navigation.js");
+
+var _navigation2 = _interopRequireDefault(_navigation);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// import CSSModule from 'react-css-modules';
+
+// import style from './page.scss';
+
+var Page = function (_React$Component) {
+	_inherits(Page, _React$Component);
+
+	function Page() {
+		_classCallCheck(this, Page);
+
+		return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).apply(this, arguments));
+	}
+
+	_createClass(Page, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(_navigation2.default, null),
+				this.props.children
+			);
+		}
+	}]);
+
+	return Page;
+}(_react2.default.Component);
+
+exports.default = Page;
+// export default CSSModule(Page, style);
+
+/***/ }),
+
+/***/ "./shared/scss/app.scss":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "express":
+/***/ (function(module, exports) {
+
+module.exports = require("express");
+
+/***/ }),
+
+/***/ "react":
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-css-modules":
+/***/ (function(module, exports) {
+
+module.exports = require("react-css-modules");
+
+/***/ }),
+
+/***/ "react-dom/server":
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
+/***/ }),
+
+/***/ "react-router":
+/***/ (function(module, exports) {
+
+module.exports = require("react-router");
+
+/***/ }),
+
+/***/ "react-router-dom":
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-dom");
+
+/***/ }),
+
+/***/ "source-map-support":
+/***/ (function(module, exports) {
+
+module.exports = require("source-map-support");
+
 /***/ })
-/******/ ]);
+
+/******/ });
 //# sourceMappingURL=server.js.map

@@ -1,5 +1,6 @@
 const nodeExternals = require('webpack-node-externals');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const Webpack = require('webpack');
 
 const Path = require('path');
 const srcPath = Path.resolve(__dirname, 'src');
@@ -61,7 +62,7 @@ module.exports = {
                             options: {
                                 camelCase: true,
                                 importLoaders: true,
-                                localIdentName: '[name]_[local]_[hash:base64:5]',
+                                localIdentName: '[name]_[hash:base64:5]',
                                 modules: true,
                                 minimize: true,
                                 namedExport: true
@@ -77,6 +78,7 @@ module.exports = {
     externals: nodeExternals(),
     devtool: 'source-map',
     plugins: [
-        new ExtractTextPlugin('[name].css')
+        new ExtractTextPlugin('[name].css'),
+        new Webpack.NamedModulesPlugin()
     ]
 };
