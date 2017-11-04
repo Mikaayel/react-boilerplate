@@ -44,6 +44,65 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                include: Path.resolve(__dirname, 'src/shared/scss/'),
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        query: {
+                            modules: false,
+                            minimize: false,
+                            import: true
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: function () {
+                                return [
+                                    require('precss'),
+                                    require('autoprefixer')
+                                ];
+                            }
+                        }
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.scss$/,
+                include: Path.resolve(__dirname, 'src/shared/components/'),
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        query: {
+                            modules: true,
+                            localIdentName: '[name]__[local]___[hash:base64:5]',
+                            minimize: false,
+                            import: true
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: function () {
+                                return [
+                                    require('precss'),
+                                    require('autoprefixer')
+                                ];
+                            }
+                        }
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
             }
         ]
     },

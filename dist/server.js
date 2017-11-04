@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -77,6 +77,12 @@ module.exports = require("react-router-dom");
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-css-modules");
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -117,13 +123,13 @@ exports.default = NotFound;
 // export default CSSModules(NotFound, style);
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _express = __webpack_require__(4);
+var _express = __webpack_require__(5);
 
 var _express2 = _interopRequireDefault(_express);
 
@@ -131,21 +137,21 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(5);
+var _reactRouter = __webpack_require__(6);
 
-var _sourceMapSupport = __webpack_require__(6);
+var _sourceMapSupport = __webpack_require__(7);
 
 var _sourceMapSupport2 = _interopRequireDefault(_sourceMapSupport);
 
-var _App = __webpack_require__(7);
+var _App = __webpack_require__(8);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _notFound = __webpack_require__(2);
+var _notFound = __webpack_require__(3);
 
 var _notFound2 = _interopRequireDefault(_notFound);
 
-var _render = __webpack_require__(15);
+var _render = __webpack_require__(16);
 
 var _render2 = _interopRequireDefault(_render);
 
@@ -241,25 +247,25 @@ console.log('server is running on port:', PORT);
 // console.log('server is running on port:', PORT);
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 module.exports = require("source-map-support");
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -273,25 +279,27 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Home = __webpack_require__(8);
-
-var _Home2 = _interopRequireDefault(_Home);
-
 var _reactRouterDom = __webpack_require__(1);
 
-var _about = __webpack_require__(9);
+var _home = __webpack_require__(9);
+
+var _home2 = _interopRequireDefault(_home);
+
+var _about = __webpack_require__(11);
 
 var _about2 = _interopRequireDefault(_about);
 
-var _notFound = __webpack_require__(2);
+var _notFound = __webpack_require__(3);
 
 var _notFound2 = _interopRequireDefault(_notFound);
 
-var _page = __webpack_require__(10);
+var _page = __webpack_require__(12);
 
 var _page2 = _interopRequireDefault(_page);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import Style from './scss/app.scss'; // global styles must be imported before components to maintain styling order
 
 exports.default = function () {
     return _react2.default.createElement(
@@ -303,7 +311,7 @@ exports.default = function () {
             _react2.default.createElement(
                 _reactRouterDom.Switch,
                 null,
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _Home2.default }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _home2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: '*', component: _notFound2.default })
             )
@@ -336,35 +344,55 @@ exports.default = function () {
     // </div>
     ;
 };
-// import Main from './Main';
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+	value: true
 });
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactCssModules = __webpack_require__(2);
+
+var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+var _home = __webpack_require__(10);
+
+var _home2 = _interopRequireDefault(_home);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = function () {
-    return _react2.default.createElement(
-        'h1',
-        null,
-        'React Boilerplate'
-    );
+var Home = function Home() {
+	return _react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(
+			'p',
+			null,
+			'home'
+		)
+	);
 };
 
+exports.default = (0, _reactCssModules2.default)(Home, _home2.default);
+// export default Home;
+
 /***/ }),
-/* 9 */
+/* 10 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -400,7 +428,7 @@ exports.default = About;
 // export default CSSModules(About, style);
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -416,11 +444,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _footer = __webpack_require__(11);
+var _footer = __webpack_require__(13);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _navigation = __webpack_require__(14);
+var _navigation = __webpack_require__(15);
 
 var _navigation2 = _interopRequireDefault(_navigation);
 
@@ -463,7 +491,7 @@ exports.default = Page;
 // export default CSSModule(Page, style);
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -477,11 +505,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactCssModules = __webpack_require__(12);
+var _reactCssModules = __webpack_require__(2);
 
 var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 
-var _footer = __webpack_require__(13);
+var _footer = __webpack_require__(14);
 
 var _footer2 = _interopRequireDefault(_footer);
 
@@ -502,19 +530,13 @@ var Footer = function Footer() {
 exports.default = (0, _reactCssModules2.default)(Footer, _footer2.default);
 
 /***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-css-modules");
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
 /* 14 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -611,7 +633,7 @@ exports.default = Navigation;
 // export default CSSModules(Navigation, style);
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -621,7 +643,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _server = __webpack_require__(16);
+var _server = __webpack_require__(17);
 
 var _react = __webpack_require__(0);
 
@@ -634,7 +656,7 @@ exports.default = function (renderMe) {
 };
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");

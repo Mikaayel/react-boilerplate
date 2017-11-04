@@ -12,3 +12,4 @@ const Home = () => {
 };
 
 export default CSSModules(Home, style);
+// export default Home;

@@ -1,7 +1,10 @@
 const nodeExternals = require('webpack-node-externals');
-const path = require('path');
-const srcPath = path.resolve(__dirname, 'src');
-const distPath = path.resolve(__dirname, 'dist');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const Path = require('path');
+const srcPath = Path.resolve(__dirname, 'src');
+const distPath = Path.resolve(__dirname, 'dist');
+
 
 module.exports = {
     context: srcPath,
@@ -25,11 +28,36 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
-            }
+            },
+            {
+                test: /\.scss$/,
+                include: Path.resolve(__dirname, 'src/shared/components/'),
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                camelCase: true,
+                                importLoaders: true,
+                                localIdentName: '[name]_[local]_[hash:base64:5]',
+                                modules: true,
+                                minimize: true,
+                                namedExport: true
+                            }
+                        },
+                        'resolve-url-loader',
+                        'sass-loader'
+                    ]
+                })
+            },
         ]
     },
     externals: nodeExternals(),
-    devtool: 'source-map'
+    devtool: 'source-map',
+    plugins: [
+        new ExtractTextPlugin('[name].css')
+    ]
 };
 
 
