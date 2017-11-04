@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Path = require('path');
 const Webpack = require('webpack');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 const srcPath = Path.resolve(__dirname, 'src');
 const distPath = Path.resolve(__dirname, 'dist');
@@ -114,8 +115,9 @@ module.exports = {
                 collapseWhitespace: true
             },
             hash: true,
-            template: 'shared/index.ejs',
-        })
+            template: 'shared/index.ejs'
+        }),
+        new DashboardPlugin()
     ]
 };
 

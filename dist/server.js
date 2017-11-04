@@ -160,7 +160,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // BASE SETUP
 // ========================================
 var PORT = process.env.PORT || 8080;
-// import fetch from 'node-fetch';
 
 // BASE COMPONENTS
 // ========================================
@@ -176,24 +175,9 @@ console.log('rendering on server side');
 
 // ROUTES SETUP
 // ========================================
-// const routes = [
-//     '/',
-//     '/g/:gistId'
-// ];
-
 app.use('/static', _express2.default.static('./dist'));
 
-// app.get('/catalogue/:name', (req, res) => {
-// 	res.send(`<p>catalogue page: Item: ${req.params.name}</p>`);
-// 	console.log(req.method, req.url, req.params);
-// });
-
 app.get('*', function (req, res) {
-    // const match = routes.reduce((acc, route) => matchPath(req.url, route, { exact: true }) || acc, null);
-    // if (!match) {
-    //     res.status(404).send(render(<NotFound />));
-    //     return;
-    // }
     res.status(200).send((0, _render2.default)(_react2.default.createElement(
         _reactRouter.StaticRouter,
         { context: {}, location: req.url },
@@ -205,46 +189,6 @@ app.get('*', function (req, res) {
 // ========================================
 app.listen(PORT);
 console.log('server is running on port:', PORT);
-
-// // server.js
-
-// // BASE SETUP
-// // ==================================================================
-// const Express 	= require('express');
-// let app 		= Express();
-// const PORT 		= process.env.PORT || 8080;
-
-// // ROUTES
-// // ==================================================================
-// app.get('/', (req, res) => {
-// 	res.send('<p>home page</p>');
-// 	console.log(req.method, req.url);
-// });
-
-// app.get('/test', (req, res) => {
-// res.status(200).send(`<p>test</p>`);
-// 	console.log(req.method, req.url);
-// });
-
-// app.get('/about', (req, res) => {
-// 	res.send('<p>about page</p>');
-// 	console.log(req.method, req.url);
-// });
-
-// app.get('/catalogue', (req, res) => {
-// 	res.send('<p>catalogue page</p>');
-// 	console.log(req.method, req.url);
-// });
-
-// app.get('/catalogue/:name', (req, res) => {
-// 	res.send(`<p>catalogue page: Item: ${req.params.name}</p>`);
-// 	console.log(req.method, req.url, req.params);
-// });
-
-// // START SERVER
-// // ==================================================================
-// app.listen(PORT);
-// console.log('server is running on port:', PORT);
 
 /***/ }),
 /* 5 */
@@ -320,33 +264,7 @@ exports.default = function () {
                 _react2.default.createElement(_reactRouterDom.Route, { path: '*', component: _notFound2.default })
             )
         )
-    )
-    // <div style={style}>
-    //     <Sidebar>
-    //         {
-    //             gists ? gists.map(gist => (
-    //                     <SidebarItem key={gist.id}>
-    //                         <Link to={`/g/${gist.id}`}>
-    //                             {gist.description || '[no description]'}
-    //                         </Link>
-    //                     </SidebarItem>
-    //                 )) : (<p>Loading…</p>)
-    //         }
-    //     </Sidebar>
-    //     <Main>
-    //         <Route path="/" exact component={Home} />
-    //         {
-    //             gists && (
-    //                 <Route path="/g/:gistId" render={
-    //                     ({ match }) => (
-    //                         <Gist gist={gists.find(g => g.id === match.params.gistId)} />
-    //                     )
-    //                 } />
-    //             )
-    //         }
-    //     </Main>
-    // </div>
-    ;
+    );
 };
 
 /***/ }),
@@ -662,7 +580,7 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function (renderMe) {
-    return '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="UTF-8">\n        <title>Tether</title>\n        <style>\n            body {\n                font-family: Helvetica Neue, Arial, sans-serif;\n                margin: 0;\n            }\n            html { box-sizing: border-box; }\n            *, *:before, *:after { box-sizing: inherit; }\n        </style>\n    </head>\n    <body>\n        <div id="root">' + (0, _server.renderToString)(renderMe) + '</div>\n        <script src="/static/client.js"></script>\n    </body>\n</html>';
+    return '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="UTF-8">\n        <title>React Boilerplate</title>\n    </head>\n    <body>\n        <div id="root">' + (0, _server.renderToString)(renderMe) + '</div>\n        <script src="/static/client.js"></script>\n    </body>\n</html>';
 };
 
 /***/ }),

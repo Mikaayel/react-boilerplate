@@ -8,7 +8,6 @@ import About from './components/about/about';
 import NotFound from './components/notFound/notFound';
 import Page from './components/page/page';
 
-
 export default () => (
     <div>
         <Page>
@@ -19,30 +18,4 @@ export default () => (
             </Switch>
         </Page>
     </div>
-    // <div style={style}>
-    //     <Sidebar>
-    //         {
-    //             gists ? gists.map(gist => (
-    //                     <SidebarItem key={gist.id}>
-    //                         <Link to={`/g/${gist.id}`}>
-    //                             {gist.description || '[no description]'}
-    //                         </Link>
-    //                     </SidebarItem>
-    //                 )) : (<p>Loading…</p>)
-    //         }
-    //     </Sidebar>
-    //     <Main>
-    //         <Route path="/" exact component={Home} />
-    //         {
-    //             gists && (
-    //                 <Route path="/g/:gistId" render={
-    //                     ({ match }) => (
-    //                         <Gist gist={gists.find(g => g.id === match.params.gistId)} />
-    //                     )
-    //                 } />
-    //             )
-    //         }
-    //     </Main>
-    // </div>
 );
-

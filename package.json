@@ -12,7 +12,7 @@
 		"lint": "eslint --fix ./src/**/*.js",
 		"build": "npm run clean && webpack --config webpack.config.server.js && webpack --config webpack.config.client.js",
 		"start": "node dist/server.js",
-		"dev:start": "webpack-dev-server --progress --inline --hot --config webpack.config.client.js"
+		"dev:start": "webpack-dashboard -- webpack-dev-server --progress --inline --hot --config webpack.config.client.js"
 	},
 	"dependencies": {
 		"express": "4.16.2",
