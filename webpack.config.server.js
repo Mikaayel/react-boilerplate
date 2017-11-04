@@ -6,6 +6,9 @@ const Path = require('path');
 const srcPath = Path.resolve(__dirname, 'src');
 const distPath = Path.resolve(__dirname, 'dist');
 
+let isProd = process.env.NODE_ENV === "production";
+console.log('your environment is:', process.env.NODE_ENV);
+
 module.exports = {
     context: srcPath,
     entry: './server/index.js',
@@ -62,7 +65,7 @@ module.exports = {
                             options: {
                                 camelCase: true,
                                 importLoaders: true,
-                                localIdentName: '[name]_[hash:base64:5]',
+                                localIdentName: '[local]_[hash:base64:5]',
                                 modules: true,
                                 minimize: true,
                                 namedExport: true

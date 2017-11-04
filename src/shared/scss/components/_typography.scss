@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,600');
+
+$base: 10px;
 
 h1 {
     font-size: 40px;
@@ -11,6 +13,4 @@ h2 {
 
 p  {
     font-size: 16px;
-    color: green;
-    text-transform: uppercase;
 }

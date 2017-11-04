@@ -15,3 +15,8 @@ body {
     font-family: $font-stack--primary;
     color: $font-color--primary;
 }
+
+.active {
+    font-weight: 600;
+    color: red;
+}

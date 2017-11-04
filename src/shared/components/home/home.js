@@ -5,11 +5,10 @@ import style from './home.scss';
 
 const Home = () => {
 	return (
-		<div styleName='home'>
-			<p>home</p>
+		<div>
+			<h1>home</h1>
 		</div>
 	);
 };
 
 export default CSSModules(Home, style);
-// export default Home;

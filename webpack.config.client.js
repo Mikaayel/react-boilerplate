@@ -6,6 +6,9 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const srcPath = Path.resolve(__dirname, 'src');
 const distPath = Path.resolve(__dirname, 'dist');
 
+let isProd = process.env.NODE_ENV === "production";
+console.log('your environment is:', process.env.NODE_ENV);
+
 module.exports = {
     context: srcPath,
     entry: './client/index.js',
@@ -84,7 +87,7 @@ module.exports = {
                         loader: 'css-loader',
                         query: {
                             modules: true,
-                            localIdentName: '[name]_[hash:base64:5]',
+                            localIdentName: '[local]_[hash:base64:5]',
                             minimize: false,
                             import: true
                         }
