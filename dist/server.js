@@ -151,7 +151,7 @@ var _notFound = __webpack_require__(3);
 
 var _notFound2 = _interopRequireDefault(_notFound);
 
-var _render = __webpack_require__(16);
+var _render = __webpack_require__(17);
 
 var _render2 = _interopRequireDefault(_render);
 
@@ -281,11 +281,15 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(1);
 
-var _home = __webpack_require__(9);
+var _app = __webpack_require__(9);
+
+var _app2 = _interopRequireDefault(_app);
+
+var _home = __webpack_require__(10);
 
 var _home2 = _interopRequireDefault(_home);
 
-var _about = __webpack_require__(11);
+var _about = __webpack_require__(12);
 
 var _about2 = _interopRequireDefault(_about);
 
@@ -293,13 +297,13 @@ var _notFound = __webpack_require__(3);
 
 var _notFound2 = _interopRequireDefault(_notFound);
 
-var _page = __webpack_require__(12);
+var _page = __webpack_require__(13);
 
 var _page2 = _interopRequireDefault(_page);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import Style from './scss/app.scss'; // global styles must be imported before components to maintain styling order
+// global styles must be imported before components to maintain styling order
 
 exports.default = function () {
     return _react2.default.createElement(
@@ -347,6 +351,12 @@ exports.default = function () {
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -364,7 +374,7 @@ var _reactCssModules = __webpack_require__(2);
 
 var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 
-var _home = __webpack_require__(10);
+var _home = __webpack_require__(11);
 
 var _home2 = _interopRequireDefault(_home);
 
@@ -386,13 +396,13 @@ exports.default = (0, _reactCssModules2.default)(Home, _home2.default);
 // export default Home;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -428,7 +438,7 @@ exports.default = About;
 // export default CSSModules(About, style);
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -444,11 +454,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _footer = __webpack_require__(13);
+var _footer = __webpack_require__(14);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _navigation = __webpack_require__(15);
+var _navigation = __webpack_require__(16);
 
 var _navigation2 = _interopRequireDefault(_navigation);
 
@@ -491,7 +501,7 @@ exports.default = Page;
 // export default CSSModule(Page, style);
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -509,7 +519,7 @@ var _reactCssModules = __webpack_require__(2);
 
 var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 
-var _footer = __webpack_require__(14);
+var _footer = __webpack_require__(15);
 
 var _footer2 = _interopRequireDefault(_footer);
 
@@ -530,13 +540,13 @@ var Footer = function Footer() {
 exports.default = (0, _reactCssModules2.default)(Footer, _footer2.default);
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -633,7 +643,7 @@ exports.default = Navigation;
 // export default CSSModules(Navigation, style);
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -643,7 +653,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _server = __webpack_require__(17);
+var _server = __webpack_require__(18);
 
 var _react = __webpack_require__(0);
 
@@ -656,7 +666,7 @@ exports.default = function (renderMe) {
 };
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");

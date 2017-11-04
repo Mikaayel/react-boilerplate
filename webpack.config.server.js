@@ -31,6 +31,28 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
+                include: Path.resolve(__dirname, 'src/shared/scss/'),
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                camelCase: true,
+                                importLoaders: true,
+                                localIdentName: '[name]',
+                                modules: true,
+                                minimize: true,
+                                namedExport: true
+                            }
+                        },
+                        'resolve-url-loader',
+                        'sass-loader'
+                    ]
+                })
+            },
+            {
+                test: /\.scss$/,
                 include: Path.resolve(__dirname, 'src/shared/components/'),
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
