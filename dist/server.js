@@ -89,10 +89,6 @@ var _App = __webpack_require__("./shared/App.js");
 
 var _App2 = _interopRequireDefault(_App);
 
-var _notFound = __webpack_require__("./shared/components/notFound/notFound.js");
-
-var _notFound2 = _interopRequireDefault(_notFound);
-
 var _render = __webpack_require__("./server/render.js");
 
 var _render2 = _interopRequireDefault(_render);
@@ -101,7 +97,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // BASE SETUP
 // ========================================
-var PORT = process.env.PORT || 8080;
+
 
 // BASE COMPONENTS
 // ========================================
@@ -109,7 +105,7 @@ var PORT = process.env.PORT || 8080;
 
 // BASE IMPORTS
 // ========================================
-
+var PORT = process.env.PORT || 8080;
 var app = (0, _express2.default)();
 _sourceMapSupport2.default.install();
 
@@ -120,11 +116,11 @@ console.log('rendering on server side');
 app.use('/static', _express2.default.static('./dist'));
 
 app.get('*', function (req, res) {
-    res.status(200).send((0, _render2.default)(_react2.default.createElement(
-        _reactRouter.StaticRouter,
-        { context: {}, location: req.url },
-        _react2.default.createElement(_App2.default, null)
-    )));
+	res.status(200).send((0, _render2.default)(_react2.default.createElement(
+		_reactRouter.StaticRouter,
+		{ context: {}, location: req.url },
+		_react2.default.createElement(_App2.default, null)
+	)));
 });
 
 // START SERVER
@@ -146,12 +142,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _server = __webpack_require__("react-dom/server");
 
-var _react = __webpack_require__("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+// import React from 'react';
 exports.default = function (renderMe) {
     return '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="UTF-8">\n        <title>React Boilerplate</title>\n    </head>\n    <body>\n        <div id="root">' + (0, _server.renderToString)(renderMe) + '</div>\n        <script src="/static/client.js"></script>\n    </body>\n</html>';
 };
@@ -165,7 +156,7 @@ exports.default = function (renderMe) {
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+	value: true
 });
 
 var _react = __webpack_require__("react");
@@ -199,22 +190,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // global styles must be imported before components to maintain styling order
 
 exports.default = function () {
-    return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-            _page2.default,
-            null,
-            _react2.default.createElement(
-                _reactRouterDom.Switch,
-                null,
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _home2.default }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about2.default }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '*', component: _notFound2.default })
-            )
-        )
-    );
+	return _react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(
+			_page2.default,
+			null,
+			_react2.default.createElement(
+				_reactRouterDom.Switch,
+				null,
+				_react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _home2.default }),
+				_react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about2.default }),
+				_react2.default.createElement(_reactRouterDom.Route, { path: '*', component: _notFound2.default })
+			)
+		)
+	);
 };
+
+// eslint-disable-next-line
 
 /***/ }),
 
@@ -282,7 +275,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Footer = function Footer() {
 	return _react2.default.createElement(
 		'footer',
-		{ className: 'row' },
+		null,
 		_react2.default.createElement(
 			'h2',
 			null,
@@ -469,11 +462,15 @@ var _react = __webpack_require__("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactCssModules = __webpack_require__("react-css-modules");
+
+var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+var _notFound = __webpack_require__("./shared/components/notFound/notFound.scss");
+
+var _notFound2 = _interopRequireDefault(_notFound);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// import CSSModules from 'react-css-modules';
-
-// import style from './notFound.scss';
 
 var NotFound = function NotFound() {
 	return _react2.default.createElement(
@@ -492,8 +489,14 @@ var NotFound = function NotFound() {
 	);
 };
 
-exports.default = NotFound;
-// export default CSSModules(NotFound, style);
+exports.default = (0, _reactCssModules2.default)(NotFound, _notFound2.default);
+
+/***/ }),
+
+/***/ "./shared/components/notFound/notFound.scss":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -513,6 +516,14 @@ var _react = __webpack_require__("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactCssModules = __webpack_require__("react-css-modules");
+
+var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+var _page = __webpack_require__("./shared/components/page/page.scss");
+
+var _page2 = _interopRequireDefault(_page);
+
 var _footer = __webpack_require__("./shared/components/footer/footer.js");
 
 var _footer2 = _interopRequireDefault(_footer);
@@ -528,9 +539,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// import CSSModule from 'react-css-modules';
-
-// import style from './page.scss';
 
 var Page = function (_React$Component) {
 	_inherits(Page, _React$Component);
@@ -548,7 +556,8 @@ var Page = function (_React$Component) {
 				'div',
 				null,
 				_react2.default.createElement(_navigation2.default, null),
-				this.props.children
+				this.props.children,
+				_react2.default.createElement(_footer2.default, null)
 			);
 		}
 	}]);
@@ -556,8 +565,14 @@ var Page = function (_React$Component) {
 	return Page;
 }(_react2.default.Component);
 
-exports.default = Page;
-// export default CSSModule(Page, style);
+exports.default = (0, _reactCssModules2.default)(Page, _page2.default);
+
+/***/ }),
+
+/***/ "./shared/components/page/page.scss":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

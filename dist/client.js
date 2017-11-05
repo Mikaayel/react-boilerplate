@@ -78,7 +78,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:300,600);", ""]);
 
 // module
-exports.push([module.i, "html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {\n  margin: 0;\n  padding: 0; }\n\nbody {\n  font-family: \"Roboto\", sans-serif;\n  color: #333; }\n\n.active {\n  font-weight: 600;\n  color: red; }\n\nh1 {\n  font-size: 40px; }\n\nh2 {\n  font-size: 30px;\n  color: orange; }\n\np {\n  font-size: 16px; }\n", ""]);
+exports.push([module.i, "html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\nbody {\n  font-family: \"Roboto\", sans-serif;\n  color: #333; }\n\n.active {\n  font-weight: 600;\n  color: red; }\n\nh1 {\n  font-size: 40px; }\n\nh2 {\n  font-size: 30px;\n  color: orange; }\n\np {\n  font-size: 16px; }\n", ""]);
 
 // exports
 
@@ -138,7 +138,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".navigation_1AU2v {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n\n.container_3i-PK {\n  width: calc(100% / 3);\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center; }\n\n.logo_2K7t_ {\n  text-align: center; }\n\n.links_OeQnV {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end; }\n  .links_OeQnV li {\n    list-style: none;\n    padding-left: 5px; }\n", ""]);
+exports.push([module.i, ".navigation_1AU2v {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  border: 1px solid red; }\n\n.container_3i-PK {\n  width: calc(100% / 3);\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center; }\n\n.logo_2K7t_ {\n  text-align: center; }\n\n.links_OeQnV {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  border: 1px solid red;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end; }\n  .links_OeQnV li {\n    list-style: none;\n    padding-left: 5px; }\n", ""]);
 
 // exports
 exports.locals = {
@@ -147,6 +147,46 @@ exports.locals = {
 	"logo": "logo_2K7t_",
 	"links": "links_OeQnV"
 };
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/notFound/notFound.scss":
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/css-loader?{"modules":true,"localIdentName":"[local]_[hash:base64:5]","minimize":false,"import":true}!../node_modules/postcss-loader?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/notFound/notFound.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "../node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "p {\n  text-align: center; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/page/page.scss":
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/css-loader?{"modules":true,"localIdentName":"[local]_[hash:base64:5]","minimize":false,"import":true}!../node_modules/postcss-loader?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/page/page.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "../node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -33784,9 +33824,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 console.log('rendering on client side');
 
 (0, _reactDom.hydrate)(_react2.default.createElement(
-    _reactRouterDom.BrowserRouter,
-    null,
-    _react2.default.createElement(_App2.default, null)
+	_reactRouterDom.BrowserRouter,
+	null,
+	_react2.default.createElement(_App2.default, null)
 ), document.getElementById('root'));
 
 /***/ }),
@@ -33803,7 +33843,7 @@ console.log('rendering on client side');
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+	value: true
 });
 
 var _react = __webpack_require__(/*! react */ "../node_modules/react/index.js");
@@ -33837,22 +33877,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // global styles must be imported before components to maintain styling order
 
 exports.default = function () {
-    return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-            _page2.default,
-            null,
-            _react2.default.createElement(
-                _reactRouterDom.Switch,
-                null,
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _home2.default }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about2.default }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '*', component: _notFound2.default })
-            )
-        )
-    );
+	return _react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(
+			_page2.default,
+			null,
+			_react2.default.createElement(
+				_reactRouterDom.Switch,
+				null,
+				_react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _home2.default }),
+				_react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about2.default }),
+				_react2.default.createElement(_reactRouterDom.Route, { path: '*', component: _notFound2.default })
+			)
+		)
+	);
 };
+
+// eslint-disable-next-line
 
 /***/ }),
 
@@ -33930,7 +33972,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Footer = function Footer() {
 	return _react2.default.createElement(
 		'footer',
-		{ className: 'row' },
+		null,
 		_react2.default.createElement(
 			'h2',
 			null,
@@ -33954,7 +33996,7 @@ exports.default = (0, _reactCssModules2.default)(Footer, _footer2.default);
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--2-1!../../../../node_modules/postcss-loader??ref--2-2!../../../../node_modules/sass-loader/lib/loader.js!./footer.scss */ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/footer/footer.scss");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--3-1!../../../../node_modules/postcss-loader??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./footer.scss */ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/footer/footer.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(/*! ../../../../node_modules/style-loader/addStyles.js */ "../node_modules/style-loader/addStyles.js")(content, {});
@@ -33963,8 +34005,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--2-1!../../../../node_modules/postcss-loader/index.js??ref--2-2!../../../../node_modules/sass-loader/lib/loader.js!./footer.scss", function() {
-			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--2-1!../../../../node_modules/postcss-loader/index.js??ref--2-2!../../../../node_modules/sass-loader/lib/loader.js!./footer.scss");
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./footer.scss", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./footer.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -34031,7 +34073,7 @@ exports.default = (0, _reactCssModules2.default)(Home, _home2.default);
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--2-1!../../../../node_modules/postcss-loader??ref--2-2!../../../../node_modules/sass-loader/lib/loader.js!./home.scss */ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/home/home.scss");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--3-1!../../../../node_modules/postcss-loader??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./home.scss */ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/home/home.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(/*! ../../../../node_modules/style-loader/addStyles.js */ "../node_modules/style-loader/addStyles.js")(content, {});
@@ -34040,8 +34082,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--2-1!../../../../node_modules/postcss-loader/index.js??ref--2-2!../../../../node_modules/sass-loader/lib/loader.js!./home.scss", function() {
-			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--2-1!../../../../node_modules/postcss-loader/index.js??ref--2-2!../../../../node_modules/sass-loader/lib/loader.js!./home.scss");
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./home.scss", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./home.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -34166,7 +34208,7 @@ exports.default = (0, _reactCssModules2.default)(Navigation, _navigation2.defaul
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--2-1!../../../../node_modules/postcss-loader??ref--2-2!../../../../node_modules/sass-loader/lib/loader.js!./navigation.scss */ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/navigation/navigation.scss");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--3-1!../../../../node_modules/postcss-loader??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./navigation.scss */ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/navigation/navigation.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(/*! ../../../../node_modules/style-loader/addStyles.js */ "../node_modules/style-loader/addStyles.js")(content, {});
@@ -34175,8 +34217,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--2-1!../../../../node_modules/postcss-loader/index.js??ref--2-2!../../../../node_modules/sass-loader/lib/loader.js!./navigation.scss", function() {
-			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--2-1!../../../../node_modules/postcss-loader/index.js??ref--2-2!../../../../node_modules/sass-loader/lib/loader.js!./navigation.scss");
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./navigation.scss", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./navigation.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -34206,11 +34248,15 @@ var _react = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactCssModules = __webpack_require__(/*! react-css-modules */ "../node_modules/react-css-modules/dist/index.js");
+
+var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+var _notFound = __webpack_require__(/*! ./notFound.scss */ "./shared/components/notFound/notFound.scss");
+
+var _notFound2 = _interopRequireDefault(_notFound);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// import CSSModules from 'react-css-modules';
-
-// import style from './notFound.scss';
 
 var NotFound = function NotFound() {
 	return _react2.default.createElement(
@@ -34229,8 +34275,39 @@ var NotFound = function NotFound() {
 	);
 };
 
-exports.default = NotFound;
-// export default CSSModules(NotFound, style);
+exports.default = (0, _reactCssModules2.default)(NotFound, _notFound2.default);
+
+/***/ }),
+
+/***/ "./shared/components/notFound/notFound.scss":
+/*!**************************************************!*\
+  !*** ./shared/components/notFound/notFound.scss ***!
+  \**************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--3-1!../../../../node_modules/postcss-loader??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./notFound.scss */ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/notFound/notFound.scss");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/addStyles.js */ "../node_modules/style-loader/addStyles.js")(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./notFound.scss", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./notFound.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -34255,6 +34332,14 @@ var _react = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactCssModules = __webpack_require__(/*! react-css-modules */ "../node_modules/react-css-modules/dist/index.js");
+
+var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+var _page = __webpack_require__(/*! ./page.scss */ "./shared/components/page/page.scss");
+
+var _page2 = _interopRequireDefault(_page);
+
 var _footer = __webpack_require__(/*! ../footer/footer */ "./shared/components/footer/footer.js");
 
 var _footer2 = _interopRequireDefault(_footer);
@@ -34270,9 +34355,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// import CSSModule from 'react-css-modules';
-
-// import style from './page.scss';
 
 var Page = function (_React$Component) {
 	_inherits(Page, _React$Component);
@@ -34290,7 +34372,8 @@ var Page = function (_React$Component) {
 				'div',
 				null,
 				_react2.default.createElement(_navigation2.default, null),
-				this.props.children
+				this.props.children,
+				_react2.default.createElement(_footer2.default, null)
 			);
 		}
 	}]);
@@ -34298,8 +34381,39 @@ var Page = function (_React$Component) {
 	return Page;
 }(_react2.default.Component);
 
-exports.default = Page;
-// export default CSSModule(Page, style);
+exports.default = (0, _reactCssModules2.default)(Page, _page2.default);
+
+/***/ }),
+
+/***/ "./shared/components/page/page.scss":
+/*!******************************************!*\
+  !*** ./shared/components/page/page.scss ***!
+  \******************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--3-1!../../../../node_modules/postcss-loader??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./page.scss */ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/page/page.scss");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/addStyles.js */ "../node_modules/style-loader/addStyles.js")(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./page.scss", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./page.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -34314,7 +34428,7 @@ exports.default = Page;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--1-1!../../../node_modules/postcss-loader??ref--1-2!../../../node_modules/sass-loader/lib/loader.js!./app.scss */ "../node_modules/css-loader/index.js?{\"modules\":false,\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/scss/app.scss");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--2-1!../../../node_modules/postcss-loader??ref--2-2!../../../node_modules/sass-loader/lib/loader.js!./app.scss */ "../node_modules/css-loader/index.js?{\"modules\":false,\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/scss/app.scss");
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(/*! ../../../node_modules/style-loader/addStyles.js */ "../node_modules/style-loader/addStyles.js")(content, {});
@@ -34323,8 +34437,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js??ref--1-1!../../../node_modules/postcss-loader/index.js??ref--1-2!../../../node_modules/sass-loader/lib/loader.js!./app.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js??ref--1-1!../../../node_modules/postcss-loader/index.js??ref--1-2!../../../node_modules/sass-loader/lib/loader.js!./app.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/postcss-loader/index.js??ref--2-2!../../../node_modules/sass-loader/lib/loader.js!./app.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/postcss-loader/index.js??ref--2-2!../../../node_modules/sass-loader/lib/loader.js!./app.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});

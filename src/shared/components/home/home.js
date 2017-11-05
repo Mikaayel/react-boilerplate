@@ -1,7 +1,7 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
 
-import style from './home.scss';
+import Style from './home.scss';
 
 const Home = () => {
 	return (
@@ -11,4 +11,4 @@ const Home = () => {
 	);
 };
 
-export default CSSModules(Home, style);
+export default CSSModules(Home, Style);

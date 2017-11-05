@@ -1,14 +1,14 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
 
-import style from './footer.scss';
+import Style from './footer.scss';
 
 const Footer = () => {
 	return (
-		<footer className='row'>
+		<footer>
 			<h2>Footer</h2>
 		</footer>
 	);
 };
 
-export default CSSModules(Footer, style);
+export default CSSModules(Footer, Style);
