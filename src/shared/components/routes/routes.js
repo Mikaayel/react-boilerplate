@@ -1,7 +1,3 @@
-// import React from 'react';
-
-// import mapRoutes from 'react-routes-map';
-
 import About from '../about/about';
 import Catalogue from '../catalogue/catalogue';
 import Home from '../home/home';

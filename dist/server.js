@@ -189,12 +189,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // eslint-disable-next-line
 // global styles must be imported before components to maintain styling order
 
-// import About from './components/about/about';
-// import Catalogue from './components/catalogue/catalogue';
-// import Home from './components/home/home';
-// import NotFound from './components/notFound/notFound';
-
-
 var App = function (_React$Component) {
 	_inherits(App, _React$Component);
 
@@ -207,31 +201,13 @@ var App = function (_React$Component) {
 	_createClass(App, [{
 		key: 'render',
 		value: function render() {
-			// const Routes = [
-			// 	{
-			// 		path: '/',
-			// 		exact: true,
-			// 		component: Home
-			// 	},
-			// 	{
-			// 		path: '/about',
-			// 		component: About
-			// 	},
-			// 	{
-			// 		path: '/catalogue',
-			// 		component: Catalogue
-			// 	},
-			// 	{
-			// 		path: '*',
-			// 		component: NotFound
-			// 	}
-			// ];
 			var routeComponents = _routes2.default.map(function (_ref, key) {
 				var path = _ref.path,
-				    component = _ref.component;
-				return _react2.default.createElement(_reactRouterDom.Route, { path: path, component: component, key: key });
+				    component = _ref.component,
+				    exact = _ref.exact;
+
+				return _react2.default.createElement(_reactRouterDom.Route, { path: path, component: component, exact: exact, key: key });
 			});
-			// console.log(Routes);
 			return _react2.default.createElement(
 				'div',
 				null,
@@ -310,8 +286,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Catalogue = function Catalogue(props) {
-	console.log(props);
+var Catalogue = function Catalogue() {
 	return _react2.default.createElement(
 		'div',
 		null,
@@ -683,19 +658,17 @@ var _notFound2 = _interopRequireDefault(_notFound);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import React from 'react';
-
-// import mapRoutes from 'react-routes-map';
-
 var Routes = [{
 	path: '/',
 	exact: true,
 	component: _home2.default
 }, {
 	path: '/about',
+	exact: true,
 	component: _about2.default
 }, {
 	path: '/catalogue',
+	exact: true,
 	component: _catalogue2.default
 }, {
 	path: '*',
