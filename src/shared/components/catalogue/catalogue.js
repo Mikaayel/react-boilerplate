@@ -1,0 +1,12 @@
+import React from 'react';
+
+const Catalogue = (props) => {
+	console.log(props);
+	return(
+		<div>
+			<h1>Catalogue</h1>
+		</div>
+	);
+};
+
+export default Catalogue;

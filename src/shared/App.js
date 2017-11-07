@@ -4,19 +4,26 @@ import { Route, Switch } from 'react-router-dom';
 // eslint-disable-next-line
 import Style from './scss/app.scss'; // global styles must be imported before components to maintain styling order
 
-import Home from './components/home/home';
-import About from './components/about/about';
-import NotFound from './components/notFound/notFound';
+import Routes from './components/routes/routes';
 import Page from './components/page/page';
 
-export default () => (
-	<div>
-		<Page>
-			<Switch>
-				<Route path='/' exact component={Home}/>
-				<Route path='/about' component={About}/>
-				<Route path='*' component={NotFound}/>
-			</Switch>
-		</Page>
-	</div>
-);
+class App extends React.Component {
+	render() {
+		const routeComponents = Routes.map(
+			({ path, component, exact}, key) => { 
+				return <Route path={path} component={component} exact={exact} key={key} />; 
+			}
+		);
+		return(
+			<div>
+				<Page>
+					<Switch>
+						{routeComponents}
+					</Switch>
+				</Page>
+			</div>
+		);
+	}
+};
+
+export default App;

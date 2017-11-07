@@ -1,5 +1,4 @@
 import { renderToString } from 'react-dom/server';
-// import React from 'react';
 export default (renderMe) => `<!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,6 +7,6 @@ export default (renderMe) => `<!DOCTYPE html>
     </head>
     <body>
         <div id="root">${renderToString(renderMe)}</div>
-        <script src="/static/client.js"></script>
+        <script src="/dist/client.js"></script>
     </body>
 </html>`;

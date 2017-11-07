@@ -22,12 +22,16 @@ console.log('rendering on server side');
 
 // ROUTES SETUP
 // ========================================
-app.use('/static', Express.static('./dist'));
+app.use('/dist', Express.static('./dist'));
+
+
+
+
 
 app.get('*', (req, res) => {
 	res.status(200).send(render(
 		<Router context={{}} location={req.url}>
-			<App/>
+			<App />
 		</Router>
 	));
 });
