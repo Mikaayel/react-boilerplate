@@ -20,6 +20,10 @@ const Routes = [
 		component: Catalogue
 	},
 	{
+		path: '/catalogue/:name',
+		component: Catalogue
+	},
+	{
 		path: '*',
 		component: NotFound
 	}

@@ -33984,7 +33984,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Catalogue = function Catalogue() {
+var Catalogue = function Catalogue(props) {
+	console.log(props);
 	return _react2.default.createElement(
 		'div',
 		null,
@@ -34521,6 +34522,9 @@ var Routes = [{
 }, {
 	path: '/catalogue',
 	exact: true,
+	component: _catalogue2.default
+}, {
+	path: '/catalogue/:name',
 	component: _catalogue2.default
 }, {
 	path: '*',

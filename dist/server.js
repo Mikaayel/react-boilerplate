@@ -93,6 +93,14 @@ var _render = __webpack_require__("./server/render.js");
 
 var _render2 = _interopRequireDefault(_render);
 
+var _notFound = __webpack_require__("./shared/components/notFound/notFound.js");
+
+var _notFound2 = _interopRequireDefault(_notFound);
+
+var _routes = __webpack_require__("./shared/components/routes/routes.js");
+
+var _routes2 = _interopRequireDefault(_routes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // BASE SETUP
@@ -116,11 +124,20 @@ console.log('rendering on server side');
 app.use('/dist', _express2.default.static('./dist'));
 
 app.get('*', function (req, res) {
-	res.status(200).send((0, _render2.default)(_react2.default.createElement(
-		_reactRouter.StaticRouter,
-		{ context: {}, location: req.url },
-		_react2.default.createElement(_App2.default, null)
-	)));
+
+	var match = _routes2.default.reduce(function (acc, route) {
+		return (0, _reactRouter.matchPath)(req.url, route, { exact: true }) || acc;
+	}, null);
+	if (match) {
+		res.status(200).send((0, _render2.default)(_react2.default.createElement(
+			_reactRouter.StaticRouter,
+			{ context: {}, location: req.url },
+			_react2.default.createElement(_App2.default, null)
+		)));
+	} else {
+		res.status(404).send((0, _render2.default)(_react2.default.createElement(_notFound2.default, null)));
+		return;
+	}
 });
 
 // START SERVER
@@ -286,7 +303,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Catalogue = function Catalogue() {
+var Catalogue = function Catalogue(props) {
+	console.log(props);
 	return _react2.default.createElement(
 		'div',
 		null,
@@ -669,6 +687,9 @@ var Routes = [{
 }, {
 	path: '/catalogue',
 	exact: true,
+	component: _catalogue2.default
+}, {
+	path: '/catalogue/:name',
 	component: _catalogue2.default
 }, {
 	path: '*',

@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Catalogue = () => {
+const Catalogue = (props) => {
+	console.log(props);
 	return(
 		<div>
 			<h1>Catalogue</h1>
