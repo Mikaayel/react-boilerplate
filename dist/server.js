@@ -269,16 +269,20 @@ var _react = __webpack_require__("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactCssModules = __webpack_require__("react-css-modules");
+
+var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+var _about = __webpack_require__("./shared/components/about/about.scss");
+
+var _about2 = _interopRequireDefault(_about);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// import CSSModules from 'react-css-modules';
-
-// import style from './about.scss';
 
 var About = function About() {
 	return _react2.default.createElement(
 		'div',
-		null,
+		{ className: 'row' },
 		_react2.default.createElement(
 			'h1',
 			null,
@@ -287,8 +291,14 @@ var About = function About() {
 	);
 };
 
-exports.default = About;
-// export default CSSModules(About, style);
+exports.default = (0, _reactCssModules2.default)(About, _about2.default);
+
+/***/ }),
+
+/***/ "./shared/components/about/about.scss":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -306,22 +316,41 @@ var _react = __webpack_require__("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactCssModules = __webpack_require__("react-css-modules");
+
+var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+var _catalogue = __webpack_require__("./shared/components/catalogue/catalogue.scss");
+
+var _catalogue2 = _interopRequireDefault(_catalogue);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Catalogue = function Catalogue(props) {
-	console.log(props);
 	return _react2.default.createElement(
 		'div',
-		null,
+		{ className: 'row' },
 		_react2.default.createElement(
 			'h1',
 			null,
 			'Catalogue'
+		),
+		props.match.params && _react2.default.createElement(
+			'p',
+			null,
+			props.match.params.name
 		)
 	);
 };
 
-exports.default = Catalogue;
+exports.default = (0, _reactCssModules2.default)(Catalogue, _catalogue2.default);
+
+/***/ }),
+
+/***/ "./shared/components/catalogue/catalogue.scss":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -352,11 +381,30 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Footer = function Footer() {
 	return _react2.default.createElement(
 		'footer',
-		null,
+		{ className: 'row', styleName: 'container' },
+		_react2.default.createElement('div', { className: 'third' }),
 		_react2.default.createElement(
-			'h2',
-			null,
-			'Footer'
+			'div',
+			{ className: 'third', styleName: 'brand' },
+			_react2.default.createElement(
+				'a',
+				{ href: 'https://www.mikarehman.com' },
+				'made by mika'
+			)
+		),
+		_react2.default.createElement(
+			'div',
+			{ className: 'third', styleName: 'social' },
+			_react2.default.createElement(
+				'span',
+				null,
+				'linkedin'
+			),
+			_react2.default.createElement(
+				'span',
+				null,
+				'github'
+			)
 		)
 	);
 };
@@ -369,6 +417,7 @@ exports.default = (0, _reactCssModules2.default)(Footer, _footer2.default);
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+module.exports = {"container":"container_2Fuz8","brand":"brand_4RDsS","social":"social_AXodN"};
 
 /***/ }),
 
@@ -399,7 +448,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Home = function Home() {
 	return _react2.default.createElement(
 		'div',
-		null,
+		{ className: 'row' },
 		_react2.default.createElement(
 			'h1',
 			null,
@@ -467,17 +516,17 @@ var Navigation = function (_React$Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				'nav',
-				{ styleName: 'navigation' },
-				_react2.default.createElement('div', { styleName: 'container' }),
+				{ className: 'row', styleName: 'navigation' },
 				_react2.default.createElement(
 					'div',
 					{ styleName: 'container' },
 					_react2.default.createElement(
 						'h1',
-						{ styleName: 'logo' },
-						'LOGO'
+						{ styleName: 'brand' },
+						'React Boilerplate'
 					)
 				),
+				_react2.default.createElement('div', { styleName: 'container' }),
 				_react2.default.createElement(
 					'div',
 					{ styleName: 'container' },
@@ -501,6 +550,15 @@ var Navigation = function (_React$Component) {
 								{ activeClassName: 'active', to: '/about' },
 								'About'
 							)
+						),
+						_react2.default.createElement(
+							'li',
+							null,
+							_react2.default.createElement(
+								_reactRouterDom.NavLink,
+								{ activeClassName: 'active', to: '/catalogue' },
+								'Catalogue'
+							)
 						)
 					)
 				)
@@ -521,7 +579,7 @@ exports.default = (0, _reactCssModules2.default)(Navigation, _navigation2.defaul
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"navigation":"navigation_1AU2v","container":"container_3i-PK","logo":"logo_2K7t_","links":"links_OeQnV"};
+module.exports = {"navigation":"navigation_1AU2v","container":"container_3i-PK","brand":"brand_2Nqof","logo":"logo_2K7t_","links":"links_OeQnV"};
 
 /***/ }),
 
@@ -709,7 +767,7 @@ exports.default = Routes;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"active":"app"};
+module.exports = {"active":"app","third":"app","row":"app"};
 
 /***/ }),
 

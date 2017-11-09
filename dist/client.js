@@ -78,7 +78,47 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:300,600);", ""]);
 
 // module
-exports.push([module.i, "html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\nbody {\n  font-family: \"Roboto\", sans-serif;\n  color: #333; }\n\n.active {\n  font-weight: 600;\n  color: red; }\n\nh1 {\n  font-size: 40px; }\n\nh2 {\n  font-size: 30px;\n  color: orange; }\n\np {\n  font-size: 16px; }\n", ""]);
+exports.push([module.i, "html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\nbody {\n  font-family: \"Roboto\", sans-serif;\n  color: #fff;\n  background-color: #454545; }\n\na {\n  color: #a2a2a2;\n  text-decoration: none;\n  transition-duration: 0.7s; }\n  a:focus, a:hover {\n    transition-duration: 0.7s;\n    color: #fff; }\n\n.active {\n  font-weight: 600;\n  color: #fff; }\n\nh1 {\n  font-size: 40px; }\n\nh2 {\n  font-size: 30px;\n  color: orange; }\n\np {\n  font-size: 16px; }\n\n.third {\n  width: calc(100% / 3); }\n\n.row {\n  padding-left: 20px;\n  padding-right: 20px; }\n\n@media screen and (min-width: 1200px) {\n  .row {\n    padding-left: 50px;\n    padding-right: 50px; } }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/about/about.scss":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/css-loader?{"modules":true,"localIdentName":"[local]_[hash:base64:5]","minimize":false,"import":true}!../node_modules/postcss-loader?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/about/about.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "../node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/catalogue/catalogue.scss":
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/css-loader?{"modules":true,"localIdentName":"[local]_[hash:base64:5]","minimize":false,"import":true}!../node_modules/postcss-loader?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/catalogue/catalogue.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "../node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -98,10 +138,14 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".container_2Fuz8 {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-bottom: 20px; }\n\n.brand_4RDsS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n\n.social_AXodN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end; }\n", ""]);
 
 // exports
-
+exports.locals = {
+	"container": "container_2Fuz8",
+	"brand": "brand_4RDsS",
+	"social": "social_AXodN"
+};
 
 /***/ }),
 
@@ -138,12 +182,13 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".navigation_1AU2v {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  border: 1px solid red; }\n\n.container_3i-PK {\n  width: calc(100% / 3);\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center; }\n\n.logo_2K7t_ {\n  text-align: center; }\n\n.links_OeQnV {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  border: 1px solid red;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end; }\n  .links_OeQnV li {\n    list-style: none;\n    padding-left: 5px; }\n", ""]);
+exports.push([module.i, ".navigation_1AU2v {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding-top: 30px;\n  padding-bottom: 30px; }\n\n.container_3i-PK {\n  width: calc(100% / 3);\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -ms-flex-item-align: center;\n      -ms-grid-row-align: center;\n      align-self: center; }\n\n.brand_2Nqof {\n  font-size: 20px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  color: orange; }\n\n.logo_2K7t_ {\n  text-align: center; }\n\n.links_OeQnV {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end; }\n  .links_OeQnV li {\n    list-style: none;\n    padding-right: 40px;\n    text-transform: uppercase; }\n    .links_OeQnV li:last-child {\n      padding-right: 0; }\n", ""]);
 
 // exports
 exports.locals = {
 	"navigation": "navigation_1AU2v",
 	"container": "container_3i-PK",
+	"brand": "brand_2Nqof",
 	"logo": "logo_2K7t_",
 	"links": "links_OeQnV"
 };
@@ -33940,16 +33985,20 @@ var _react = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactCssModules = __webpack_require__(/*! react-css-modules */ "../node_modules/react-css-modules/dist/index.js");
+
+var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+var _about = __webpack_require__(/*! ./about.scss */ "./shared/components/about/about.scss");
+
+var _about2 = _interopRequireDefault(_about);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// import CSSModules from 'react-css-modules';
-
-// import style from './about.scss';
 
 var About = function About() {
 	return _react2.default.createElement(
 		'div',
-		null,
+		{ className: 'row' },
 		_react2.default.createElement(
 			'h1',
 			null,
@@ -33958,8 +34007,39 @@ var About = function About() {
 	);
 };
 
-exports.default = About;
-// export default CSSModules(About, style);
+exports.default = (0, _reactCssModules2.default)(About, _about2.default);
+
+/***/ }),
+
+/***/ "./shared/components/about/about.scss":
+/*!********************************************!*\
+  !*** ./shared/components/about/about.scss ***!
+  \********************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--3-1!../../../../node_modules/postcss-loader??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./about.scss */ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/about/about.scss");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/addStyles.js */ "../node_modules/style-loader/addStyles.js")(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./about.scss", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./about.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -33982,22 +34062,66 @@ var _react = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactCssModules = __webpack_require__(/*! react-css-modules */ "../node_modules/react-css-modules/dist/index.js");
+
+var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+var _catalogue = __webpack_require__(/*! ./catalogue.scss */ "./shared/components/catalogue/catalogue.scss");
+
+var _catalogue2 = _interopRequireDefault(_catalogue);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Catalogue = function Catalogue(props) {
-	console.log(props);
 	return _react2.default.createElement(
 		'div',
-		null,
+		{ className: 'row' },
 		_react2.default.createElement(
 			'h1',
 			null,
 			'Catalogue'
+		),
+		props.match.params && _react2.default.createElement(
+			'p',
+			null,
+			props.match.params.name
 		)
 	);
 };
 
-exports.default = Catalogue;
+exports.default = (0, _reactCssModules2.default)(Catalogue, _catalogue2.default);
+
+/***/ }),
+
+/***/ "./shared/components/catalogue/catalogue.scss":
+/*!****************************************************!*\
+  !*** ./shared/components/catalogue/catalogue.scss ***!
+  \****************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--3-1!../../../../node_modules/postcss-loader??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./catalogue.scss */ "../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[local]_[hash:base64:5]\",\"minimize\":false,\"import\":true}!../node_modules/postcss-loader/index.js?{}!../node_modules/sass-loader/lib/loader.js!./shared/components/catalogue/catalogue.scss");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/addStyles.js */ "../node_modules/style-loader/addStyles.js")(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./catalogue.scss", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--3-1!../../../../node_modules/postcss-loader/index.js??ref--3-2!../../../../node_modules/sass-loader/lib/loader.js!./catalogue.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -34033,11 +34157,30 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Footer = function Footer() {
 	return _react2.default.createElement(
 		'footer',
-		null,
+		{ className: 'row', styleName: 'container' },
+		_react2.default.createElement('div', { className: 'third' }),
 		_react2.default.createElement(
-			'h2',
-			null,
-			'Footer'
+			'div',
+			{ className: 'third', styleName: 'brand' },
+			_react2.default.createElement(
+				'a',
+				{ href: 'https://www.mikarehman.com' },
+				'made by mika'
+			)
+		),
+		_react2.default.createElement(
+			'div',
+			{ className: 'third', styleName: 'social' },
+			_react2.default.createElement(
+				'span',
+				null,
+				'linkedin'
+			),
+			_react2.default.createElement(
+				'span',
+				null,
+				'github'
+			)
 		)
 	);
 };
@@ -34110,7 +34253,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Home = function Home() {
 	return _react2.default.createElement(
 		'div',
-		null,
+		{ className: 'row' },
 		_react2.default.createElement(
 			'h1',
 			null,
@@ -34208,17 +34351,17 @@ var Navigation = function (_React$Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				'nav',
-				{ styleName: 'navigation' },
-				_react2.default.createElement('div', { styleName: 'container' }),
+				{ className: 'row', styleName: 'navigation' },
 				_react2.default.createElement(
 					'div',
 					{ styleName: 'container' },
 					_react2.default.createElement(
 						'h1',
-						{ styleName: 'logo' },
-						'LOGO'
+						{ styleName: 'brand' },
+						'React Boilerplate'
 					)
 				),
+				_react2.default.createElement('div', { styleName: 'container' }),
 				_react2.default.createElement(
 					'div',
 					{ styleName: 'container' },
@@ -34241,6 +34384,15 @@ var Navigation = function (_React$Component) {
 								_reactRouterDom.NavLink,
 								{ activeClassName: 'active', to: '/about' },
 								'About'
+							)
+						),
+						_react2.default.createElement(
+							'li',
+							null,
+							_react2.default.createElement(
+								_reactRouterDom.NavLink,
+								{ activeClassName: 'active', to: '/catalogue' },
+								'Catalogue'
 							)
 						)
 					)
