@@ -9,7 +9,7 @@ class Navigation extends React.Component {
 		return (
 			<nav className='row' styleName='navigation'>
 				<div styleName='container'>
-					<h1 styleName='brand'>Mika Rehman</h1>
+					<h1 styleName='brand'>React Boilerplate</h1>
 				</div>
 				<div styleName='container'>
 					{/* <h1 styleName='logo'>LOGO</h1> */}

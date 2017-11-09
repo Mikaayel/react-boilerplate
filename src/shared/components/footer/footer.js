@@ -6,10 +6,11 @@ import Style from './footer.scss';
 const Footer = () => {
 	return (
 		<footer className='row' styleName='container'>
-			<div styleName='brand'>
-				<h2>made by mika</h2>
+			<div className='third'></div>
+			<div className='third' styleName='brand'>
+				<a href='https://www.mikarehman.com'>made by mika</a>
 			</div>
-			<div styleName='social'>
+			<div className='third' styleName='social'>
 				<span>linkedin</span>
 				<span>github</span>
 			</div>
