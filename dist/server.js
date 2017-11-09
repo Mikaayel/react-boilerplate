@@ -75,6 +75,10 @@ var _express = __webpack_require__("express");
 
 var _express2 = _interopRequireDefault(_express);
 
+var _helmet = __webpack_require__("helmet");
+
+var _helmet2 = _interopRequireDefault(_helmet);
+
 var _react = __webpack_require__("react");
 
 var _react2 = _interopRequireDefault(_react);
@@ -109,22 +113,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // BASE COMPONENTS
 // ========================================
-// SERVER SIDE RENDERING
+var PORT = process.env.PORT || 8080; // SERVER SIDE RENDERING
 
 // BASE IMPORTS
 // ========================================
-var PORT = process.env.PORT || 8080;
-var app = (0, _express2.default)();
-_sourceMapSupport2.default.install();
 
-console.log('rendering on server side');
+var app = (0, _express2.default)();
+
+// ADDITIONAL IMPORTS
+// ========================================
+app.use((0, _helmet2.default)());
+_sourceMapSupport2.default.install();
 
 // ROUTES SETUP
 // ========================================
 app.use('/dist', _express2.default.static('./dist'));
 
 app.get('*', function (req, res) {
-
 	var match = _routes2.default.reduce(function (acc, route) {
 		return (0, _reactRouter.matchPath)(req.url, route, { exact: true }) || acc;
 	}, null);
@@ -712,6 +717,13 @@ module.exports = {"active":"app"};
 /***/ (function(module, exports) {
 
 module.exports = require("express");
+
+/***/ }),
+
+/***/ "helmet":
+/***/ (function(module, exports) {
+
+module.exports = require("helmet");
 
 /***/ }),
 

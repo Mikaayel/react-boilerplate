@@ -3,6 +3,7 @@
 // BASE IMPORTS
 // ========================================
 import Express from 'express';
+import Helmet from 'helmet';
 import React from 'react';
 import { StaticRouter as Router, matchPath } from 'react-router';
 import sourceMapSupport from 'source-map-support';
@@ -11,24 +12,24 @@ import sourceMapSupport from 'source-map-support';
 // ========================================
 import App from '../shared/App';
 import render from './render';
+import NotFound from '../shared/components/notFound/notFound';
+import Routes from '../shared/components/routes/routes';
 
 // BASE SETUP
 // ========================================
 const PORT = process.env.PORT || 8080;
 const app = Express();
+
+// ADDITIONAL IMPORTS
+// ========================================
+app.use(Helmet());
 sourceMapSupport.install();
-
-import NotFound from '../shared/components/notFound/notFound';
-import Routes from '../shared/components/routes/routes';
-
-console.log('rendering on server side');
 
 // ROUTES SETUP
 // ========================================
 app.use('/dist', Express.static('./dist'));
 
 app.get('*', (req, res) => {
-
 	const match = Routes.reduce((acc, route) => matchPath(req.url, route, { exact: true }) || acc, null);
     if (match) {
 		res.status(200).send(render(
@@ -40,7 +41,6 @@ app.get('*', (req, res) => {
 		res.status(404).send(render(<NotFound />));
 		return;
 	}
-
 });
 
 // START SERVER
