@@ -20,10 +20,22 @@ html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
 // globals
 body {
     font-family: $font-stack--primary;
-    color: $font-color--primary;
+    color: #fff;
+    background-color: #454545;
+}
+
+a {
+    color: #a2a2a2;
+    text-decoration: none;
+    transition-duration: 0.7s;
+
+    &:focus, &:hover {
+        transition-duration: 0.7s;
+        color: #fff;
+    }
 }
 
 .active {
     font-weight: 600;
-    color: red;
+    color: #fff;
 }

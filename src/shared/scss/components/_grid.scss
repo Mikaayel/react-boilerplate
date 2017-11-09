@@ -1,0 +1,11 @@
+.row {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media screen and (min-width: 1200px){
+    .row {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}

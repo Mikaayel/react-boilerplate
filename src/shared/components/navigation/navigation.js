@@ -7,15 +7,18 @@ import Style from './navigation.scss';
 class Navigation extends React.Component {
 	render() {
 		return (
-			<nav styleName='navigation'>
-				<div styleName='container'></div>
+			<nav className='row' styleName='navigation'>
 				<div styleName='container'>
-					<h1 styleName='logo'>LOGO</h1>
+					<h1 styleName='brand'>Mika Rehman</h1>
+				</div>
+				<div styleName='container'>
+					{/* <h1 styleName='logo'>LOGO</h1> */}
 				</div>
 				<div styleName='container'>
 					<ul styleName='links'>
 						<li><NavLink activeClassName="active" exact to="/">Home</NavLink></li>
 						<li><NavLink activeClassName="active" to="/about">About</NavLink></li>
+						<li><NavLink activeClassName="active" to="/catalogue">Catalogue</NavLink></li>
 					</ul>
 				</div>
 			</nav>

@@ -1,9 +1,7 @@
 .navigation {
     display: flex;
-    border: 1px solid red;
-    // display: grid;
-    // grid-template-columns: repeat(3, 1fr);
-    // grid-template-rows: 1fr 2fr 1fr;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .container {
@@ -13,17 +11,26 @@
     
 }
 
+.brand {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
 .logo {
     text-align: center;
 }
 
 .links {
     display: flex;
-    border: 1px solid red;
     justify-content: flex-end;
 
     li {
         list-style: none;
-        padding-left: 5px;
+        padding-right: 40px;
+        text-transform: uppercase;
+        
+        &:last-child {
+            padding-right: 0;
+        }
     }
 }

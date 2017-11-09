@@ -1,0 +1,17 @@
+.container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.brand,
+.social {
+    width: 50vw;
+}
+
+.social {
+    display: flex;
+    justify-content: flex-end;
+}
