@@ -1,10 +1,6 @@
-#auto-generated stuff
-node_modules/
+node_modules
 stats.json
 yarn.lock
 yarn-error.log
-
-# trash
 .DS_Store
 npm-debug.log
-.idea

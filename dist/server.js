@@ -165,7 +165,7 @@ Object.defineProperty(exports, "__esModule", {
 var _server = __webpack_require__("react-dom/server");
 
 exports.default = function (renderMe) {
-    return '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="UTF-8">\n        <title>React Boilerplate</title>\n    </head>\n    <body>\n        <div id="root">' + (0, _server.renderToString)(renderMe) + '</div>\n        <script src="/dist/client.js"></script>\n    </body>\n</html>';
+    return '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="UTF-8">\n        <title>React Boilerplate</title>\n        <style>body{background-color:#454545}a{color:#a2a2a2,text-decoration:none}.third{width:calc(100%/3)}</style>\n    </head>\n    <body>\n        <div id="root">' + (0, _server.renderToString)(renderMe) + '</div>\n        <script src="/dist/client.js"></script>\n    </body>\n</html>';
 };
 
 /***/ }),
@@ -396,14 +396,14 @@ var Footer = function Footer() {
 			'div',
 			{ className: 'third', styleName: 'social' },
 			_react2.default.createElement(
-				'span',
-				null,
-				'linkedin'
+				'a',
+				{ href: 'https://github.com/Mikaayel/react-boilerplate' },
+				'GitHub'
 			),
 			_react2.default.createElement(
-				'span',
-				null,
-				'github'
+				'a',
+				{ href: 'https://www.linkedin.com/in/mika-rehman/' },
+				'LinkedIn'
 			)
 		)
 	);
@@ -452,7 +452,7 @@ var Home = function Home() {
 		_react2.default.createElement(
 			'h1',
 			null,
-			'Home'
+			'Home Page'
 		)
 	);
 };

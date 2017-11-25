@@ -6,7 +6,7 @@ import Style from './home.scss';
 const Home = () => {
 	return (
 		<div className='row'>
-			<h1>Home</h1>
+			<h1>Home Page</h1>
 		</div>
 	);
 };

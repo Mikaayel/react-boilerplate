@@ -11,8 +11,8 @@ const Footer = () => {
 				<a href='https://www.mikarehman.com'>made by mika</a>
 			</div>
 			<div className='third' styleName='social'>
-				<span>linkedin</span>
-				<span>github</span>
+				<a href='https://github.com/Mikaayel/react-boilerplate'>GitHub</a>
+				<a href='https://www.linkedin.com/in/mika-rehman/'>LinkedIn</a>
 			</div>
 		</footer>
 	);

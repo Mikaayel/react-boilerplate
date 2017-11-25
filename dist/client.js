@@ -138,7 +138,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".container_2Fuz8 {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-bottom: 20px; }\n\n.brand_4RDsS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n\n.social_AXodN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end; }\n", ""]);
+exports.push([module.i, ".container_2Fuz8 {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-bottom: 20px;\n  padding-top: 40px; }\n\n.brand_4RDsS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n\n.social_AXodN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end; }\n  .social_AXodN a {\n    padding-right: 10px; }\n    .social_AXodN a:last-child {\n      padding-right: 0; }\n", ""]);
 
 // exports
 exports.locals = {
@@ -34172,14 +34172,14 @@ var Footer = function Footer() {
 			'div',
 			{ className: 'third', styleName: 'social' },
 			_react2.default.createElement(
-				'span',
-				null,
-				'linkedin'
+				'a',
+				{ href: 'https://github.com/Mikaayel/react-boilerplate' },
+				'GitHub'
 			),
 			_react2.default.createElement(
-				'span',
-				null,
-				'github'
+				'a',
+				{ href: 'https://www.linkedin.com/in/mika-rehman/' },
+				'LinkedIn'
 			)
 		)
 	);
@@ -34257,7 +34257,7 @@ var Home = function Home() {
 		_react2.default.createElement(
 			'h1',
 			null,
-			'Home'
+			'Home Page'
 		)
 	);
 };

@@ -25,20 +25,6 @@ module.exports = {
         modules: ['node_modules', 'src'],
         extensions: ['*', '.js', '.json']
     },
-    devServer: {
-		contentBase: distPath,
-		compress: false,
-		hot: true,
-		port: 8080,
-		stats: {
-			children: false,
-			chunks: false,
-			chunkModules: false,
-			warnings: false
-		},
-		open: false,
-		historyApiFallback: true
-	},
     module: {
         rules: [
             {
@@ -89,7 +75,7 @@ module.exports = {
                         'sass-loader'
                     ]
                 })
-            },
+            }
         ]
     },
     externals: nodeExternals(),
